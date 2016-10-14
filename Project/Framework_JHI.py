@@ -78,11 +78,11 @@ def quit():
     running = False
 
 
-def run(start_state):
+def run(Start_State_JHI):
     global running, stack
     running = True
-    stack = [start_state]
-    start_state.enter()
+    stack = [Start_State_JHI]
+    Start_State_JHI.enter()
     while (running):
         stack[-1].handle_events()
         stack[-1].update()

@@ -1,5 +1,5 @@
-import game_framework
-import title_state
+import Framework_JHI
+import Title_State_JHI
 from pico2d import *
 
 
@@ -26,7 +26,7 @@ def update():
     global logo_time
     if logo_time > 1.0 :
         logo_time = 0
-        game_framework.push_state(title_state)
+        Framework_JHI.push_state(Title_State_JHI)
     delay(0.01)
     logo_time +=0.01
     pass
