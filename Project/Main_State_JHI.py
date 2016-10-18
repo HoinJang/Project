@@ -14,13 +14,31 @@ ground = None
 block = None
 potal = None
 running = None
+background = None
 
+class BackGround:
+    image = None
+    def __init__(self):
+        self.x1 = 400
+        self.x2 = 1200
+        if BackGround.image == None:
+            BackGround.image = load_image('Resource/BackGround.png')
+    def draw(self):
+        self.image.draw(self.x1,300)
+        self.image.draw(self.x2,300)
+    def update(self):
+        self.x1 -= 1
+        self.x2 -= 1
+        if self.x1 == -400:
+            self.x1 = 1200
+        if self.x2 == -400:
+            self.x2 = 1200
 class Potal:
     image = None
     def __init__(self):
         self.frame = 0
         if Potal.image == None:
-            self.image = load_image('Resource/Potal.png')
+            Potal.image = load_image('Resource/Potal.png')
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 50, 100, 485)
     def update(self):
@@ -31,7 +49,7 @@ class Block:
     image = None
     def __init__(self):
         if Block.image == None:
-            self.image = load_image('Resource/Block.png')
+            Block.image = load_image('Resource/Block.png')
     def draw(self):
         self.image.draw(350,175)
         self.image.draw(425,310)
@@ -142,14 +160,14 @@ class Player:
     def draw(self):
         self.image.clip_draw(self.frame * 50, self.imagestate * 50, 50, 50, self.x, self.y)
 
-
-
 def enter():
     global player
     global running
     global ground
     global block
     global potal
+    global background
+    background = BackGround()
     player = Player()
     ground = Ground()
     block = Block()
@@ -159,11 +177,12 @@ def enter():
 
 
 def exit():
-    global player,ground
+    global player,ground,block,potal,background
     del(player)
     del(ground)
     del(block)
     del(potal)
+    del(background)
     pass
 
 
@@ -192,12 +211,14 @@ def handle_events():
 def update():
     player.update()
     potal.update()
+    background.update()
     delay(0.01)
     pass
 
 
 def draw():
     clear_canvas()
+    background.draw()
     potal.draw()
     ground.draw()
     block.draw()
