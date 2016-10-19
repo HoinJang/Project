@@ -37,7 +37,7 @@
       <file leaf-file-name="Start_State_JHI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Start_State_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="360">
               <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="Framework_JHI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Framework_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="324">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,21 +59,17 @@
       <file leaf-file-name="Main_State_JHI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="-840">
+              <caret line="166" column="34" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#707#1046#0" expanded="false" />
-                <element signature="e#1064#1310#0" expanded="false" />
-                <element signature="e#1329#1512#0" expanded="false" />
-                <element signature="e#1531#5099#0" expanded="false" />
-                <element signature="e#1675#1876#0" expanded="false" />
-                <element signature="e#1918#2030#0" expanded="false" />
-                <element signature="e#2071#2275#0" expanded="false" />
-                <element signature="e#2318#2431#0" expanded="false" />
-                <element signature="e#2472#2908#0" expanded="false" />
-                <element signature="e#2950#3389#0" expanded="false" />
-                <element signature="e#3981#4921#0" expanded="false" />
+                <element signature="e#617#1087#0" expanded="false" />
+                <element signature="e#1110#1565#0" expanded="false" />
+                <element signature="e#2640#2841#0" expanded="false" />
+                <element signature="e#2883#2995#0" expanded="false" />
+                <element signature="e#3283#3396#0" expanded="false" />
+                <element signature="e#3437#3873#0" expanded="false" />
+                <element signature="e#3915#4354#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -82,7 +78,7 @@
       <file leaf-file-name="MyGame_JHI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyGame_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="180">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -94,11 +90,9 @@
       <file leaf-file-name="Title_State_JHI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
-              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,10 +141,14 @@
         <option value="$PROJECT_DIR$/title_state.py" />
         <option value="$PROJECT_DIR$/mygame.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
-        <option value="$PROJECT_DIR$/Framework_JHI.py" />
         <option value="$PROJECT_DIR$/MyGame_JHI.py" />
         <option value="$PROJECT_DIR$/Start_State_JHI.py" />
         <option value="$PROJECT_DIR$/Title_State_JHI.py" />
+        <option value="$PROJECT_DIR$/Resource/BackGround.py" />
+        <option value="$PROJECT_DIR$/BackGround.py" />
+        <option value="$PROJECT_DIR$/Resource/BackGroundClass.py" />
+        <option value="$PROJECT_DIR$/BackGroundClass.py" />
+        <option value="$PROJECT_DIR$/Framework_JHI.py" />
         <option value="$PROJECT_DIR$/Main_State_JHI.py" />
       </list>
     </option>
@@ -186,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,6 +205,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +470,7 @@
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,60 +502,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Framework_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#707#1046#0" expanded="false" />
-            <element signature="e#1064#1310#0" expanded="false" />
-            <element signature="e#1329#1512#0" expanded="false" />
-            <element signature="e#1531#5099#0" expanded="false" />
-            <element signature="e#1675#1876#0" expanded="false" />
-            <element signature="e#1918#2030#0" expanded="false" />
-            <element signature="e#2071#2275#0" expanded="false" />
-            <element signature="e#2318#2431#0" expanded="false" />
-            <element signature="e#2472#2908#0" expanded="false" />
-            <element signature="e#2950#3389#0" expanded="false" />
-            <element signature="e#3981#4921#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyGame_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resource/kpu_credit.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -597,17 +546,13 @@
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#707#1046#0" expanded="false" />
-            <element signature="e#1064#1310#0" expanded="false" />
-            <element signature="e#1329#1512#0" expanded="false" />
-            <element signature="e#1531#5099#0" expanded="false" />
-            <element signature="e#1675#1876#0" expanded="false" />
-            <element signature="e#1918#2030#0" expanded="false" />
-            <element signature="e#2071#2275#0" expanded="false" />
-            <element signature="e#2318#2431#0" expanded="false" />
-            <element signature="e#2472#2908#0" expanded="false" />
-            <element signature="e#2950#3389#0" expanded="false" />
-            <element signature="e#3981#4921#0" expanded="false" />
+            <element signature="e#617#1087#0" expanded="false" />
+            <element signature="e#1110#1565#0" expanded="false" />
+            <element signature="e#2640#2841#0" expanded="false" />
+            <element signature="e#2883#2995#0" expanded="false" />
+            <element signature="e#3283#3396#0" expanded="false" />
+            <element signature="e#3437#3873#0" expanded="false" />
+            <element signature="e#3915#4354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -626,9 +571,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,8 +635,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        <state relative-caret-position="36">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Start_State_JHI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resource/BackGround.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackGround.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resource/BackGroundClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackGroundClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyGame_JHI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -702,49 +695,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Framework_JHI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="324">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Start_State_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyGame_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="-840">
+          <caret line="166" column="34" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#707#1046#0" expanded="false" />
-            <element signature="e#1064#1310#0" expanded="false" />
-            <element signature="e#1329#1512#0" expanded="false" />
-            <element signature="e#1531#5099#0" expanded="false" />
-            <element signature="e#1675#1876#0" expanded="false" />
-            <element signature="e#1918#2030#0" expanded="false" />
-            <element signature="e#2071#2275#0" expanded="false" />
-            <element signature="e#2318#2431#0" expanded="false" />
-            <element signature="e#2472#2908#0" expanded="false" />
-            <element signature="e#2950#3389#0" expanded="false" />
-            <element signature="e#3981#4921#0" expanded="false" />
+            <element signature="e#617#1087#0" expanded="false" />
+            <element signature="e#1110#1565#0" expanded="false" />
+            <element signature="e#2640#2841#0" expanded="false" />
+            <element signature="e#2883#2995#0" expanded="false" />
+            <element signature="e#3283#3396#0" expanded="false" />
+            <element signature="e#3437#3873#0" expanded="false" />
+            <element signature="e#3915#4354#0" expanded="false" />
           </folding>
         </state>
       </provider>
