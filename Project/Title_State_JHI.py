@@ -1,5 +1,7 @@
 import Framework_JHI
 import Main_State_JHI
+import Macro
+
 from pico2d import *
 
 
@@ -7,15 +9,12 @@ name = "TitleState"
 image = None
 def enter():
     global image
-    image = load_image('Resource/Title.png')
-    pass
-
+    if image == None:
+        image = load_image('Resource/Title.png')
 
 def exit():
     global image
     del(image)
-    pass
-
 
 def handle_events():
     events = get_events()
@@ -32,7 +31,7 @@ def handle_events():
 
 def draw():
     clear_canvas()
-    image.draw(400,300)
+    image.draw(Macro.width / 2, Macro.height / 2)
     update_canvas()
     pass
 

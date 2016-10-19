@@ -4,11 +4,20 @@ import os
 
 from pico2d import *
 
+import BackGround
+import Potal
+import Ladder
+import Barrel
+import Block
+import Ground
+import Player
+import Macro
+
 import Framework_JHI
 import Title_State_JHI
 
+# initialization code
 name = "MainState"
-
 ladder = None
 player = None
 ground = None
@@ -17,207 +26,6 @@ potal = None
 running = None
 background = None
 barrel = None
-
-class Barrel:
-    image = None
-    def __init__(self):
-        self.frame = 0
-        if Barrel.image == None :
-            Barrel.image = load_image('Resource/Barrel.png')
-    def draw(self):
-        self.image.clip_draw(self.frame * 30, 0, 30, 30, 30, 455)
-    def update(self):
-        self.frame +=1
-        if(self.frame > 7):
-            self.frame = 0
-class Ladder:
-    image = None
-    def __init__(self):
-        if Ladder.image == None :
-            Ladder.image = load_image('Resource/Ladder.png')
-    def draw(self):
-        self.image.draw(300, 100)
-        self.image.draw(100, 100)
-        self.image.draw(600, 100)
-        self.image.draw(700, 230)
-        self.image.draw(250, 230)
-        self.image.draw(500, 230)
-        self.image.draw(100, 360)
-        self.image.draw(300, 360)
-        self.image.draw(500, 360)
-        pass
-class BackGround:
-    image = None
-    def __init__(self):
-        self.x1 = 400
-        self.x2 = 1200
-        if BackGround.image == None:
-            BackGround.image = load_image('Resource/BackGround.png')
-    def draw(self):
-        self.image.draw(self.x1,300)
-        self.image.draw(self.x2,300)
-    def update(self):
-        self.x1 -= 1
-        self.x2 -= 1
-        if self.x1 == -400:
-            self.x1 = 1200
-        if self.x2 == -400:
-            self.x2 = 1200
-class Potal:
-    image = None
-    def __init__(self):
-        self.frame = 0
-        if Potal.image == None:
-            Potal.image = load_image('Resource/Potal.png')
-    def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 50, 100, 465)
-    def update(self):
-        self.frame +=1
-        if(self.frame > 7):
-            self.frame = 0
-class Block:
-    image = None
-    def __init__(self):
-        if Block.image == None:
-            Block.image = load_image('Resource/Block.png')
-    def draw(self):             #50 ~ 150
-        self.image.draw(350,165) #180~280
-        self.image.draw(425,295) #310~410
-        self.image.draw(350,425)
-class Ground:
-    image = None
-    def __init__(self):
-        if Ground.image == None:
-            Ground.image = load_image('Resource/Ground.png')
-    def draw(self):
-        self.image.draw(400, 25)
-class Player:
-    image = None
-
-    LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, LEFT_JUMP, RIGHT_JUMP, LADDER_UP, LADDER_DOWN, LADDER_STAND  = 0, 1, 2, 3, 4, 5, 6, 7, 8
-
-    def handle_left_run(self):
-        self.state = self.LEFT_RUN
-        self.imagestate = 3
-        self.beforejump = self.y
-        self.x = max(0, self.x - 3)
-        self.frame += 1
-        if self.frame > 3:
-            self.frame = 0
-    def handle_left_stand(self):
-        self.state = self.LEFT_STAND
-        self.imagestate = 3
-        self.beforejump = self.y
-        self.frame = 4
-    def handle_right_run(self):
-        self.state = self.RIGHT_RUN
-        self.imagestate = 2
-        self.beforejump = self.y
-        self.x = min(800, self.x + 3)
-        self.frame += 1
-        if self.frame > 3:
-            self.frame = 0
-    def handle_right_stand(self):
-        self.state = self.RIGHT_STAND
-        self.imagestate = 2
-        self.beforejump = self.y
-        self.frame = 4
-    def handle_left_jump(self):
-        self.imagestate = 3
-        self.frame = 0
-        self.x = max(0, self.x - 1)
-        if (self.jump == False):
-            self.y += 3
-            if (self.y >= self.beforejump + 70):
-                self.jump = True
-        if (self.jump == True):
-            self.y -= 3
-            if (self.y < self.beforejump):
-                self.y = self.beforejump
-                self.state = self.LEFT_STAND
-                self.jump = False
-    def handle_right_jump(self):
-        self.imagestate = 2
-        self.frame = 3
-        self.x = min(800, self.x + 1)
-        if (self.jump == False):
-            self.y += 3
-            if (self.y >= self.beforejump + 70):
-                self.jump = True
-        if (self.jump == True):
-            self.y -= 3
-            if (self.y < self.beforejump):
-                self.y = self.beforejump
-                self.state = self.RIGHT_STAND
-                self.jump = False
-    def handle_ladder_up(self):
-        self.state = self.LADDER_UP
-        self.imagestate = 1
-        self.y +=1
-        self.frame +=1
-        if self.frame > 1:
-            self.frame = 0
-    def handle_ladder_down(self):
-        self.state = self.LADDER_DOWN
-        self.imagestate = 1
-        self.y -=1
-        self.frame +=1
-        if self.frame > 1:
-            self.frame = 0
-    def handle_ladder_stand(self):
-        self.state = self.LADDER_STAND
-        self.imagestate = 1
-        self.frame = 4
-    handle_state = {
-        LEFT_RUN: handle_left_run,
-        RIGHT_RUN: handle_right_run,
-        LEFT_STAND: handle_left_stand,
-        RIGHT_STAND: handle_right_stand,
-        LEFT_JUMP: handle_left_jump,
-        RIGHT_JUMP:handle_right_jump,
-        LADDER_UP:handle_ladder_up,
-        LADDER_DOWN:handle_ladder_down,
-        LADDER_STAND:handle_ladder_stand
-    }
-    def __init__(self):
-        self.x, self.y = 750, 50
-        self.imagestate = 2
-        self.frame = 4
-        self.state = self.RIGHT_STAND
-        self.jump = False
-        self.beforejump = 0
-        if Player.image == None:
-            Player.image = load_image('Resource/Player1.png')
-    def handle_event(self,event):
-        if(event.type, event.key) == (SDL_KEYDOWN, SDLK_LEFT):
-            if self.state in (self.RIGHT_STAND, self.LEFT_STAND):
-                self.state = self.LEFT_RUN
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_RIGHT):
-            if self.state in (self.RIGHT_STAND, self.LEFT_STAND):
-                self.state = self.RIGHT_RUN
-        elif (event.type, event.key) == (SDL_KEYUP, SDLK_RIGHT):
-            if self.state in (self.RIGHT_RUN,):
-                self.state = self.RIGHT_STAND
-        elif (event.type, event.key) == (SDL_KEYUP, SDLK_LEFT):
-            if self.state in (self.LEFT_RUN,):
-                self.state = self.LEFT_STAND
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
-            self.state = self.LADDER_UP
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_DOWN):
-            self.state = self.LADDER_DOWN
-        elif (event.type, event.key) == (SDL_KEYUP, SDLK_UP):
-            self.state = self.LADDER_STAND
-        elif (event.type, event.key) == (SDL_KEYUP, SDLK_DOWN):
-            self.state = self.LADDER_STAND
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
-            if self.state in (self.RIGHT_RUN,self.RIGHT_STAND):
-                self.state = self.RIGHT_JUMP
-            elif self.state in (self.LEFT_RUN, self.LEFT_STAND):
-                self.state = self.LEFT_JUMP
-    def update(self):
-        self.handle_state[self.state](self)
-    def draw(self):
-        self.image.clip_draw(self.frame * 50, self.imagestate * 50, 50, 50, self.x, self.y+15)
 
 def enter():
     global player
@@ -228,19 +36,17 @@ def enter():
     global background
     global ladder
     global barrel
-    ladder = Ladder()
-    background = BackGround()
-    ground = Ground()
-    block = Block()
-    potal = Potal()
-    barrel = Barrel()
-    player = Player()
+    ladder = Ladder.Ladder()
+    background = BackGround.BackGround()
+    ground = Ground.Ground()
+    block = Block.Block()
+    potal = Potal.Potal()
+    barrel = Barrel.Barrel()
+    player = Player.Player()
     running = True
-    pass
-
 
 def exit():
-    global player,ground,block,potal,background
+    global player, ground, block, potal, background, ladder, barrel
     del(player)
     del(ground)
     del(block)
@@ -248,16 +54,12 @@ def exit():
     del(background)
     del(ladder)
     del(barrel)
-    pass
-
 
 def pause():
     pass
 
-
 def resume():
     pass
-
 
 def handle_events():
     global running
@@ -270,8 +72,6 @@ def handle_events():
                 Framework_JHI.quit()
         else:
             player.handle_event(event)
-    pass
-
 
 def update():
     player.update()
@@ -279,8 +79,6 @@ def update():
     background.update()
     barrel.update()
     delay(0.01)
-    pass
-
 
 def draw():
     clear_canvas()
@@ -292,6 +90,5 @@ def draw():
     barrel.draw()
     player.draw()
     update_canvas()
-    pass
 
 

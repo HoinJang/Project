@@ -1,5 +1,6 @@
 import Framework_JHI
 import Title_State_JHI
+import Macro
 from pico2d import *
 
 
@@ -10,17 +11,15 @@ logo_time = 0.0
 
 def enter():
     global image
-    open_canvas()
-    image= load_image('Resource/kpu_credit.png')
-    pass
+    open_canvas(Macro.width, Macro.height, sync = True)
+    if image == None:
+        image = load_image('Resource/kpu_credit.png')
 
 
 def exit():
     global image
     del(image)
     close_canvas()
-    pass
-
 
 def update():
     global logo_time
@@ -29,24 +28,22 @@ def update():
         Framework_JHI.push_state(Title_State_JHI)
     delay(0.01)
     logo_time +=0.01
-    pass
 
 def draw():
     global image
     clear_canvas()
-    image.draw(400, 300)
+    image.draw(Macro.width / 2, Macro.height / 2)
     update_canvas()
-    pass
 
 def handle_events():
     events = get_events()
+
+def pause():
     pass
 
 
-def pause(): pass
-
-
-def resume(): pass
+def resume():
+    pass
 
 
 
