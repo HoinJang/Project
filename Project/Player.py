@@ -37,11 +37,11 @@ class Player:
         self.frame = 0
         self.x = max(0, self.x - 1)
         if (self.jump == False):
-            self.y += 3
+            self.y += 5
             if (self.y >= self.beforejump + 70):
                 self.jump = True
         if (self.jump == True):
-            self.y -= 3
+            self.y -= 5
             if (self.y < self.beforejump):
                 self.y = self.beforejump
                 self.state = self.LEFT_STAND
@@ -51,11 +51,11 @@ class Player:
         self.frame = 3
         self.x = min(800, self.x + 1)
         if (self.jump == False):
-            self.y += 3
+            self.y += 5
             if (self.y >= self.beforejump + 70):
                 self.jump = True
         if (self.jump == True):
-            self.y -= 3
+            self.y -= 5
             if (self.y < self.beforejump):
                 self.y = self.beforejump
                 self.state = self.RIGHT_STAND

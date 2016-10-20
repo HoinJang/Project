@@ -26,34 +26,28 @@ potal = None
 running = None
 background = None
 barrel = None
+time = 0
 
 def enter():
-    global player
-    global running
-    global ground
-    global block
-    global potal
-    global background
-    global ladder
-    global barrel
+    global player,running,ground,block,potal,background,ladder,barrels
     ladder = Ladder.Ladder()
     background = BackGround.BackGround()
     ground = Ground.Ground()
     block = Block.Block()
     potal = Potal.Potal()
-    barrel = Barrel.Barrel()
+    barrels = [Barrel() for i in range(0)]
     player = Player.Player()
     running = True
 
 def exit():
-    global player, ground, block, potal, background, ladder, barrel
+    global player, ground, block, potal, background, barrels, hurdle
     del(player)
     del(ground)
     del(block)
     del(potal)
     del(background)
     del(ladder)
-    del(barrel)
+    del(barrels)
 
 def pause():
     pass
@@ -74,10 +68,17 @@ def handle_events():
             player.handle_event(event)
 
 def update():
+    global time,barrels
     player.update()
     potal.update()
     background.update()
-    barrel.update()
+    time +=1
+    if time%50 == 1:
+        barrels += [Barrel.Barrel()]
+
+    for barrel in barrels:
+        barrel.update()
+
     delay(0.01)
 
 def draw():
@@ -87,7 +88,8 @@ def draw():
     potal.draw()
     ground.draw()
     block.draw()
-    barrel.draw()
+    for barrel in barrels:
+        barrel.draw()
     player.draw()
     update_canvas()
 
