@@ -27,7 +27,8 @@ class Barrel:
             self.y -= self.dy
         if self.x <= 30:
             self.y -= self.dy
-        if self.x < 30 and self.y < 65:
-            del(self)
         if(self.frame > 7):
             self.frame = 0
+    def __del__(self):
+        if self.x < 30 and self.y < 65:
+            del(Barrel)
