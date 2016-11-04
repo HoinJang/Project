@@ -124,7 +124,9 @@ class Player:
                 self.state = self.RIGHT_JUMP
             elif self.state in (self.LEFT_RUN, self.LEFT_STAND):
                 self.state = self.LEFT_JUMP
-    def update(self):
-        self.handle_state[self.state](self)
+
     def draw(self):
         self.image.clip_draw(self.frame * 50, self.imagestate * 50, 50, 50, self.x, self.y+15)
+
+    def update(self):
+        self.handle_state[self.state](self)

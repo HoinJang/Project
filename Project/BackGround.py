@@ -7,9 +7,6 @@ class BackGround:
         self.x2 = 1200
         if BackGround.image == None:
             BackGround.image = load_image('Resource/BackGround.png')
-    def draw(self):
-        self.image.draw(self.x1,300)
-        self.image.draw(self.x2,300)
     def update(self):
         self.x1 -= 1
         self.x2 -= 1
@@ -17,3 +14,6 @@ class BackGround:
             self.x1 = 1200
         if self.x2 == -400:
             self.x2 = 1200
+    def draw(self):
+        self.image.draw(self.x1,300)
+        self.image.draw(self.x2,300)

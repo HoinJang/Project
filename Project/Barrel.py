@@ -10,8 +10,6 @@ class Barrel:
         self.dy = 5
         if Barrel.image == None :
             Barrel.image = load_image('Resource/Barrel.png')
-    def draw(self):
-        self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)
     def update(self):
         self.frame +=1
         if self.y == 455:
@@ -29,6 +27,9 @@ class Barrel:
             self.y -= self.dy
         if(self.frame > 7):
             self.frame = 0
+    def draw(self):
+        self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)
+
     def __del__(self):
         if self.x < 30 and self.y < 65:
             del(Barrel)

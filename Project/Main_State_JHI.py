@@ -55,18 +55,17 @@ def pause():
 def resume():
     pass
 
-def handle_events():
-    global running
-    global player
-    events = get_events()
-    for event in events:
-        if event.type == SDL_QUIT:
-            Framework_JHI.quit()
-        elif (event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE):
-                Framework_JHI.quit()
-        else:
-            player.handle_event(event)
-
+def draw():
+    clear_canvas()
+    background.draw()
+    ladder.draw()
+    potal.draw()
+    ground.draw()
+    block.draw()
+    for barrel in barrels:
+        barrel.draw()
+    player.draw()
+    update_canvas()
 def update():
     global time,barrels
     player.update()
@@ -81,16 +80,18 @@ def update():
 
     delay(0.01)
 
-def draw():
-    clear_canvas()
-    background.draw()
-    ladder.draw()
-    potal.draw()
-    ground.draw()
-    block.draw()
-    for barrel in barrels:
-        barrel.draw()
-    player.draw()
-    update_canvas()
+def handle_events():
+    global running
+    global player
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            Framework_JHI.quit()
+        elif (event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE):
+                Framework_JHI.quit()
+        else:
+            player.handle_event(event)
+
+
 
 
