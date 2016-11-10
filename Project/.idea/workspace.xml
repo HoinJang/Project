@@ -67,17 +67,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Macro.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Macro.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Macro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rank_State.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rank_State.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rank_State.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -181,8 +181,8 @@
         <option value="$PROJECT_DIR$/Main_State_JHI.py" />
         <option value="$PROJECT_DIR$/Player.py" />
         <option value="$PROJECT_DIR$/Barrel.py" />
-        <option value="$PROJECT_DIR$/Macro.py" />
         <option value="$PROJECT_DIR$/Rank_State.py" />
+        <option value="$PROJECT_DIR$/Macro.py" />
       </list>
     </option>
   </component>
@@ -218,7 +218,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,6 +238,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -714,18 +714,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Macro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rank_State.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Macro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding />
         </state>
       </provider>
