@@ -1,4 +1,5 @@
 from pico2d import *
+import Macro
 
 
 class Player:
@@ -90,7 +91,7 @@ class Player:
         LADDER_STAND:handle_ladder_stand
     }
     def __init__(self):
-        self.x, self.y = 750, 50
+        self.x, self.y = 25, 100
         self.imagestate = 2
         self.frame = 4
         self.state = self.RIGHT_STAND
@@ -126,7 +127,13 @@ class Player:
                 self.state = self.LEFT_JUMP
 
     def draw(self):
-        self.image.clip_draw(self.frame * 50, self.imagestate * 50, 50, 50, self.x, self.y+15)
-
+        self.image.clip_draw(self.frame * Macro.player_size, self.imagestate * Macro.player_size, Macro.player_size, Macro.player_size, self.x, self.y)
+    def get_bb(self):
+        return self.x - Macro.player_size/2 + 5, self.y - Macro.player_size/2 + 5, self.x +Macro.player_size/2 -5 , self.y +Macro.player_size/2
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
     def update(self):
         self.handle_state[self.state](self)
+        self.y -= 1
+    def setY(self,y):
+        self.y = y

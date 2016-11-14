@@ -5,13 +5,23 @@ from pico2d import *
 
 class Block:
     image = None
-    map_data1 = [[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0],[0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0]]
-
-    def __init__(self):
+    def __init__(self,x,y):
+        self.x, self.y = x,y
         if Block.image == None:
             Block.image = load_image('Resource/BlockImage.png')
     def draw(self):
-        for i in range(0,4):
-            for j in range(0,16):
-                if(self.map_data1[i][j] == 1):
-                    self.image.draw(Macro.tile_size/2 + (j*Macro.tile_size), (150*i)+Macro.tile_size/2)
+        self.image.draw(self.x, self.y)
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
+    def get_bb(self):
+        return self.x - Macro.tile_size/2, self.y - Macro.tile_size/2, self.x + Macro.tile_size/2, self.y + Macro.tile_size/2
+
+    def collide(self, b):
+        left_a, bottom_a, right_a, top_a = self.get_bb()
+        left_b, bottom_b, right_b, top_b = b.get_bb()
+
+        if left_a > right_b : return False
+        if right_a < left_b : return False
+        if top_a < bottom_b : return False
+        if bottom_a > top_b : return False
+        return True

@@ -4,16 +4,22 @@ from pico2d import *
 
 class Ladder:
     image = None
-    ladder_data = [[1,1,1],[1,1,1],[1,1,1]]
-
-    def __init__(self):
-        if Ladder.image == None :
+    def __init__(self,x,y):
+        self.x, self.y = x,y
+        if Ladder.image == None:
             Ladder.image = load_image('Resource/Ladder.png')
     def draw(self):
-        for i in range(0, 3):
-            for j in range(0, 3):
-                if (self.ladder_data[i][j] == 1):
-                    if(i !=1):
-                        self.image.draw(Macro.ladder_width / 2 + ((j+1) * (Macro.ladder_width*2)), (150 * i) + Macro.ladder_height / 2 + Macro.ladder_height/3)
-                    else:
-                        self.image.draw(- Macro.ladder_width/2  + ((j + 1) * (Macro.ladder_width*2)),(150 * i) + Macro.ladder_height / 2 + Macro.ladder_height / 3)
+        self.image.draw(self.x, self.y)
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
+    def get_bb(self):
+        return self.x - Macro.ladder_width / 2, self.y - Macro.ladder_height/ 2, self.x + Macro.ladder_width / 2, self.y + Macro.ladder_height / 2
+    def collide(self, b):
+        left_a, bottom_a, right_a, top_a = self.get_bb()
+        left_b, bottom_b, right_b, top_b = b.get_bb()
+
+        if left_a > right_b: return False
+        if right_a < left_b: return False
+        if top_a < bottom_b: return False
+        if bottom_a > top_b: return False
+        return True
