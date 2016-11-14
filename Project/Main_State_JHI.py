@@ -8,7 +8,6 @@ import BackGround
 import Potal
 import Barrel
 import Map
-import Ground
 import Player
 import Macro
 import Framework_JHI
@@ -16,7 +15,6 @@ import Framework_JHI
 # initialization code
 name = "MainState"
 player = None
-ground = None
 potal = None
 running = None
 background = None
@@ -25,9 +23,8 @@ map = None
 time = 0
 
 def enter():
-    global player,running,ground,block,potal,background,barrels,map
+    global player,running,block,potal,background,barrels,map
     background = BackGround.BackGround()
-    ground = Ground.Ground()
     map = Map.Map()
     potal = Potal.Potal()
     barrels = [Barrel() for i in range(0)]
@@ -35,9 +32,8 @@ def enter():
     running = True
 
 def exit():
-    global player, ground, map, potal, background, barrels, hurdle
+    global player, map, potal, background, barrels, hurdle
     del(player)
-    del(ground)
     del(map)
     del(potal)
     del(background)
@@ -53,10 +49,10 @@ def draw():
     clear_canvas()
     background.draw()
     potal.draw()
-    ground.draw()
     map.draw()
     for barrel in barrels:
         barrel.draw()
+        barrel.draw_bb()
     player.draw()
     player.draw_bb()
     update_canvas()
@@ -66,16 +62,18 @@ def update():
     potal.update()
     background.update()
     time +=1
-    if time%50 == 1:
+    if time%100 == 1:
         barrels += [Barrel.Barrel()]
     for barrel in barrels:
         barrel.update()
     for block in map.blocks:
         if block.collide(player):
             if(player.state != player.LEFT_JUMP and player.state != player.RIGHT_JUMP):
-                player.setY(block.y + Macro.tile_size-5)
+                player.y = block.y + Macro.tile_size-5
                 print("collide")
-
+    for ladder in map.ladders:
+        if ladder.collide(player):
+            player.y +=1
     delay(0.01)
 
     return True

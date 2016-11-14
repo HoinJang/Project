@@ -18,6 +18,7 @@ class Map:
                 else :
                     self.ladders += [Ladder.Ladder(Macro.ladder_width * 2 + (Macro.ladder_width * 2 * p), Macro.ladder_height/2 + Macro.ladder_height/3 + (Macro.ladder_height * q))]
 
+        self.blocks[0] = Block.Block(Macro.tile_delete,Macro.tile_delete)
         self.blocks[2] = Block.Block(Macro.tile_delete,Macro.tile_delete)
         self.blocks[63] = Block.Block(Macro.tile_delete, Macro.tile_delete)
         self.blocks[61] = Block.Block(Macro.tile_delete,Macro.tile_delete)

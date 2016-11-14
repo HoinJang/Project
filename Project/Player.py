@@ -11,7 +11,7 @@ class Player:
         self.state = self.LEFT_RUN
         self.imagestate = 3
         self.beforejump = self.y
-        self.x = max(0, self.x - 3)
+        self.x = max(0, self.x - 1)
         self.frame += 1
         if self.frame > 3:
             self.frame = 0
@@ -91,7 +91,7 @@ class Player:
         LADDER_STAND:handle_ladder_stand
     }
     def __init__(self):
-        self.x, self.y = 25, 100
+        self.x, self.y = 75, 100
         self.imagestate = 2
         self.frame = 4
         self.state = self.RIGHT_STAND
@@ -135,5 +135,3 @@ class Player:
     def update(self):
         self.handle_state[self.state](self)
         self.y -= 1
-    def setY(self,y):
-        self.y = y

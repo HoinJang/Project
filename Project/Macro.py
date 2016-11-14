@@ -14,6 +14,8 @@ ladder_height = 150
 ladder_wnumber = 3
 ladder_hnumber = 3
 ladder_delete = -75
+# Draw Barrel constat
+barrel_size = 30
 
 
 player_start_x = 25
