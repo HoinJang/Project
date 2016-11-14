@@ -58,10 +58,10 @@ def resume():
 def draw():
     clear_canvas()
     background.draw()
-    ladder.draw()
     potal.draw()
     ground.draw()
     block.draw()
+    ladder.draw()
     for barrel in barrels:
         barrel.draw()
     player.draw()
