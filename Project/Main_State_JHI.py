@@ -93,5 +93,3 @@ def handle_events():
             player.handle_event(event)
 
 
-
-
