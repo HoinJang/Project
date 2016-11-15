@@ -62,7 +62,7 @@ def update(frame_time):
     player.update(frame_time)
     potal.update()
     background.update()
-    time +=1
+    time += 1
     if time%100 == 1:
         barrels += [Barrel.Barrel()]
     for barrel in barrels:
@@ -70,16 +70,10 @@ def update(frame_time):
     for block in map.blocks:
         if block.collide(player):
             player.gravity = False
-            print('coliide block')
-
     for ladder in map.ladders:
         if ladder.collide(player):
-            player.collision_ladder = True
-            print('collide ladder')
-
-    delay(0.01)
-
-    return True
+            player.collide_ladder_x = ladder.x
+            player.collide_ladder_y = ladder.y
 def handle_events(frame_time):
     global running
     global player
@@ -91,3 +85,12 @@ def handle_events(frame_time):
                 Framework_JHI.quit()
         else:
             player.handle_event(event)
+def collide(a, b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get_bb()
+
+    if left_a > right_b : return False
+    if right_a < left_b : return False
+    if top_a < bottom_b : return False
+    if bottom_a > top_b : return False
+    return True
