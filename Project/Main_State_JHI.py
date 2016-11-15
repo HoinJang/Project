@@ -1,7 +1,6 @@
 import random
 import json
 import os
-
 from pico2d import *
 
 import BackGround
@@ -11,7 +10,7 @@ import Map
 import Player
 import Macro
 import Framework_JHI
-
+import Rank_State
 # initialization code
 name = "MainState"
 player = None
@@ -30,7 +29,7 @@ def enter():
     barrels = [Barrel() for i in range(0)]
     player = Player.Player()
     running = True
-
+    Framework_JHI.reset_time()
 def exit():
     global player, map, potal, background, barrels, hurdle
     del(player)
@@ -55,18 +54,22 @@ def draw(frame_time):
         barrel.draw_bb()
     player.draw()
     player.draw_bb()
+    potal.draw_bb()
     update_canvas()
 
 def update(frame_time):
-    global time,barrels,map
+    global time,barrels,map,potal
+
     player.update(frame_time)
-    potal.update()
+    potal.update(frame_time)
     background.update()
     time += 1
     if time%100 == 1:
         barrels += [Barrel.Barrel()]
     for barrel in barrels:
-        barrel.update()
+        barrel.update(frame_time)
+        if collide(barrel, player):
+            print("player -- ")
     for block in map.blocks:
         if block.collide(player):
             player.gravity = False
@@ -74,6 +77,15 @@ def update(frame_time):
         if ladder.collide(player):
             player.collide_ladder_x = ladder.x
             player.collide_ladder_y = ladder.y
+    if collide(player,potal):
+        f = open('Data_File_Temp', 'r')
+        score_data = json.load(f)
+        f.close()
+        score_data.append({"Time": player.life_time, "X": player.x, "Y": player.y})
+        f = open('Data_File_Temp', 'w')
+        json.dump(score_data, f)
+        f.close()
+        Framework_JHI.change_state(Rank_State)
 def handle_events(frame_time):
     global running
     global player

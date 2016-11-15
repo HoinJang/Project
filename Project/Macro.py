@@ -14,9 +14,10 @@ ladder_height = 150
 ladder_wnumber = 3
 ladder_hnumber = 3
 ladder_delete = -200
-# Draw Barrel constat
+# Draw Barrel constant
 barrel_size = 30
-
+# Draw Potal constant
+potal_size = 50
 
 floor1 = 50
 floor2 = 200

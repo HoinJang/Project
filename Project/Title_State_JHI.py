@@ -7,10 +7,10 @@ from pico2d import *
 
 name = "TitleState"
 image = None
+
 def enter():
     global image
-    if image == None:
-        image = load_image('Resource/Title.png')
+    image = load_image('Resource/Title.png')
 
 def exit():
     global image

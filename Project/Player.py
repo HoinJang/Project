@@ -28,9 +28,13 @@ class Player:
         self.gravity = True
         self.collide_ladder_x = 0
         self.collide_ladder_y = 0
+        self.life_time = 0
+
+
         if Player.image == None:
             Player.image = load_image('Resource/Player1.png')
     def update(self, frame_time):
+        self.life_time += frame_time
         distance = Player.RUN_SPEED_PPS * frame_time
         self.total_frames += Player.FRAMES_PER_ACTION * Player.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % 5
