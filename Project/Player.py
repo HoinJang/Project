@@ -20,16 +20,38 @@ class Player:
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, LEFT_JUMP, RIGHT_JUMP, LADDER_UP, LADDER_DOWN, LADDER_STAND  = 0, 1, 2, 3, 4, 5, 6, 7, 8
 
 
+    def __init__(self):
+        self.x, self.y = 75, 100
+        self.imagestate = 2
+        self.frame = 4
+        self.state = self.RIGHT_STAND
+        self.jump = False
+        self.total_frames = 0
+        self.beforejump = 0
+        self.gravity = True
+        self.collision_block = True
+        self.collision_ladder = False
+        if Player.image == None:
+            Player.image = load_image('Resource/Player1.png')
+    def update(self, frame_time):
+        distance = Player.RUN_SPEED_PPS * frame_time
+        self.total_frames += Player.FRAMES_PER_ACTION * Player.ACTION_PER_TIME * frame_time
+        self.frame = int(self.total_frames) % 5
+        self.handle_state[self.state](self, distance)
+        if self.gravity:
+            self.y -= distance
     def handle_left_stand(self,distance):
         self.state = self.LEFT_STAND
         self.imagestate = 3
         self.beforejump = self.y
         self.frame = 4
+        self.jump = False
     def handle_right_stand(self,distance):
         self.state = self.RIGHT_STAND
         self.imagestate = 2
         self.beforejump = self.y
         self.frame = 4
+        self.jump = False
     def handle_ladder_stand(self,distance):
         self.state = self.LADDER_STAND
         self.imagestate = 1
@@ -42,6 +64,7 @@ class Player:
         self.frame += 1
         if self.frame > 3:
             self.frame = 0
+        self.jump = False
     def handle_right_run(self,distance):
         self.state = self.RIGHT_RUN
         self.imagestate = 2
@@ -50,32 +73,35 @@ class Player:
         self.frame += 1
         if self.frame > 3:
             self.frame = 0
+        self.jump = False
     def handle_left_jump(self,distance):
         self.imagestate = 3
         self.frame = 0
-        self.x = max(0, self.x - 1)
+        self.x = max(0, self.x - distance/2)
         if (self.jump == False):
-            self.y += distance * 2
-            if (self.y >= self.beforejump + 70):
+            self.y += distance
+            if (self.y > self.beforejump + 70):
                 self.jump = True
         if (self.jump == True):
+            self.gravity = True
             if (self.y < self.beforejump):
-                self.y = self.beforejump
+                self.gravity = False
                 self.state = self.LEFT_STAND
-                self.jump = False
+                self.y = self.beforejump
     def handle_right_jump(self,distance):
         self.imagestate = 2
         self.frame = 3
-        self.x = min(800, self.x + 1)
+        self.x = min(800, self.x + distance/2)
         if (self.jump == False):
-            self.y += distance *2
-            if (self.y >= self.beforejump + 70):
+            self.y += distance
+            if (self.y > self.beforejump + 70):
                 self.jump = True
         if (self.jump == True):
+            self.gravity = True
             if (self.y < self.beforejump):
-                self.y = self.beforejump
+                self.gravity = False
                 self.state = self.RIGHT_STAND
-                self.jump = False
+                self.y = self.beforejump
     def handle_ladder_up(self,distance):
         self.state = self.LADDER_UP
         self.imagestate = 1
@@ -101,22 +127,6 @@ class Player:
         LADDER_DOWN:handle_ladder_down,
         LADDER_STAND:handle_ladder_stand
     }
-    def __init__(self):
-        self.x, self.y = 75, 100
-        self.imagestate = 2
-        self.frame = 4
-        self.state = self.RIGHT_STAND
-        self.jump = False
-        self.total_frames = 0
-        self.beforejump = 0
-        self.gravity = True
-        self.leftright_on = False
-        self.updown_on = False
-        self.collison_block = True
-        self.collison_ladder = False
-
-        if Player.image == None:
-            Player.image = load_image('Resource/Player1.png')
     def handle_event(self,event):
         if(event.type, event.key) == (SDL_KEYDOWN, SDLK_LEFT):
             if self.state in (self.RIGHT_STAND, self.LEFT_STAND, self.RIGHT_RUN):
@@ -129,8 +139,13 @@ class Player:
                 self.state = self.RIGHT_STAND
         elif (event.type, event.key) == (SDL_KEYUP, SDLK_LEFT):
             if self.state in (self.LEFT_RUN,):
-                self.state = self.LEFT_STAND
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
+                    self.state = self.LEFT_STAND
+        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
+            if self.state in (self.RIGHT_RUN,self.RIGHT_STAND):
+                self.state = self.RIGHT_JUMP
+            elif self.state in (self.LEFT_RUN, self.LEFT_STAND):
+                self.state = self.LEFT_JUMP
+        if (event.type, event.key) == (SDL_KEYDOWN, SDLK_UP):
             self.state = self.LADDER_UP
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_DOWN):
             self.state = self.LADDER_DOWN
@@ -138,22 +153,6 @@ class Player:
             self.state = self.LADDER_STAND
         elif (event.type, event.key) == (SDL_KEYUP, SDLK_DOWN):
             self.state = self.LADDER_STAND
-        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
-            if self.state in (self.RIGHT_RUN,self.RIGHT_STAND):
-                self.state = self.RIGHT_JUMP
-            elif self.state in (self.LEFT_RUN, self.LEFT_STAND):
-                self.state = self.LEFT_JUMP
-
-    def update(self, frame_time):
-        distance = Player.RUN_SPEED_PPS * frame_time
-        self.total_frames += Player.FRAMES_PER_ACTION * Player.ACTION_PER_TIME * frame_time
-        self.frame = int(self.total_frames) % 5
-        self.handle_state[self.state](self, distance)
-        if self.gravity == True:
-            self.y -= distance
-            self.leftright_on = False
-            self.updown_on = False
-            self.collison_block = True
 
     def draw(self):
         self.image.clip_draw(self.frame * Macro.player_size, self.imagestate * Macro.player_size, Macro.player_size, Macro.player_size, self.x, self.y)

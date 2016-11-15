@@ -69,10 +69,14 @@ def update(frame_time):
         barrel.update()
     for block in map.blocks:
         if block.collide(player):
-            pass
+            player.gravity = False
+            print('coliide block')
+
     for ladder in map.ladders:
         if ladder.collide(player):
-            pass
+            player.collision_ladder = True
+            print('collide ladder')
+
     delay(0.01)
 
     return True

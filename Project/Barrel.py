@@ -21,7 +21,7 @@ class Barrel:
             self.x += self.dx
         elif self.y == 65:
             self.x -= self.dx
-        if self.x >= 750:
+        if self.x >= 770:
             self.y -= self.dy
         if self.x <= 30:
             self.y -= self.dy
