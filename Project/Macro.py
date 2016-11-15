@@ -5,7 +5,7 @@ height = 600
 tile_size = 50
 tile_wnumber = 16
 tile_hnumber = 4
-tile_delete = -25
+tile_delete = -100
 # Draw Block constant
 floor_gap = 100
 # Draw Ladder constant

@@ -16,7 +16,7 @@ def exit():
     global image
     del(image)
 
-def handle_events():
+def handle_events(frame_time):
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -29,13 +29,13 @@ def handle_events():
     pass
 
 
-def draw():
+def draw(frame_time):
     clear_canvas()
     image.draw(Macro.width / 2, Macro.height / 2)
     update_canvas()
     pass
 
-def update():
+def update(frame_time):
     pass
 
 

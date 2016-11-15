@@ -13,7 +13,7 @@ class Ladder:
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
     def get_bb(self):
-        return self.x - Macro.ladder_width / 2, self.y - Macro.ladder_height/ 2, self.x + Macro.ladder_width / 2, self.y + Macro.ladder_height / 2
+        return self.x - Macro.ladder_width / 2 + 15, self.y - Macro.ladder_height/ 2, self.x + Macro.ladder_width / 2 - 15, self.y + Macro.ladder_height / 2
     def collide(self, b):
         left_a, bottom_a, right_a, top_a = self.get_bb()
         left_b, bottom_b, right_b, top_b = b.get_bb()

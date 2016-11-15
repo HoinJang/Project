@@ -45,7 +45,7 @@ def pause():
 def resume():
     pass
 
-def draw():
+def draw(frame_time):
     clear_canvas()
     background.draw()
     potal.draw()
@@ -56,9 +56,10 @@ def draw():
     player.draw()
     player.draw_bb()
     update_canvas()
-def update():
+
+def update(frame_time):
     global time,barrels,map
-    player.update()
+    player.update(frame_time)
     potal.update()
     background.update()
     time +=1
@@ -68,16 +69,14 @@ def update():
         barrel.update()
     for block in map.blocks:
         if block.collide(player):
-            if(player.state != player.LEFT_JUMP and player.state != player.RIGHT_JUMP):
-                player.y = block.y + Macro.tile_size-5
-                print("collide")
+            pass
     for ladder in map.ladders:
         if ladder.collide(player):
-            player.y +=1
+            pass
     delay(0.01)
 
     return True
-def handle_events():
+def handle_events(frame_time):
     global running
     global player
     events = get_events()
