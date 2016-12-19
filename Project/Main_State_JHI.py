@@ -15,7 +15,6 @@ import Rank_State
 name = "MainState"
 player = None
 potal = None
-running = None
 background = None
 barrel = None
 map = None
@@ -24,11 +23,10 @@ time = 0
 def enter():
     global player,running,block,potal,background,barrels,map
     background = BackGround.BackGround()
-    map = Map.Map(2)
+    map = Map.Map(1)
     potal = Potal.Potal()
     barrels = [Barrel() for i in range(0)]
     player = Player.Player()
-    running = True
     Framework_JHI.reset_time()
 def exit():
     global player, map, potal, background, barrels, hurdle
@@ -48,13 +46,13 @@ def draw(frame_time):
     clear_canvas()
     background.draw()
     potal.draw()
+    potal.draw_bb()
     map.draw()
     for barrel in barrels:
         barrel.draw()
         barrel.draw_bb()
     player.draw()
     player.draw_bb()
-    potal.draw_bb()
     update_canvas()
 
 def update(frame_time):
@@ -70,6 +68,8 @@ def update(frame_time):
         barrel.update(frame_time)
         if collide(barrel, player):
             print("player -- ")
+            del(barrel)
+
     for block in map.blocks:
         if block.collide(player):
             player.gravity = False
@@ -78,27 +78,26 @@ def update(frame_time):
             player.collide_ladder_x = ladder.x
             player.collide_ladder_y = ladder.y
     if collide(player,potal):
-        f = open('Data_File_Temp', 'r')
+        f = open('Ranking_file', 'r')
         score_data = json.load(f)
         f.close()
         score_data.append({"Time": player.life_time, "X": player.x, "Y": player.y})
-        f = open('Data_File_Temp', 'w')
+        f = open('Ranking_file', 'w')
         json.dump(score_data, f)
         f.close()
         Framework_JHI.change_state(Rank_State)
 def handle_events(frame_time):
-    global running
     global player
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
             Framework_JHI.quit()
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE):
-            f = open('Data_File_Temp', 'r')
+            f = open('Ranking_file', 'r')
             score_data = json.load(f)
             f.close()
             score_data.append({"Time": player.life_time, "X": player.x, "Y": player.y})
-            f = open('Data_File_Temp', 'w')
+            f = open('Ranking_file', 'w')
             json.dump(score_data, f)
             f.close()
             Framework_JHI.change_state(Rank_State)

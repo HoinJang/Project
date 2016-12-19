@@ -12,11 +12,11 @@ class Potal:
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 5
     image = None
-    def __init__(self):
+
+    def __init__(self,x,y):
+        self.x, self.y = x,y
         self.frame = 0
         self.total_frames = 0
-        self.x =  700
-        self.y = 525
         if Potal.image == None:
             Potal.image = load_image('Resource/Potal.png')
     def draw(self):

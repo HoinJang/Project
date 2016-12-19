@@ -39,6 +39,7 @@ class Barrel:
             self.frame = 0
     def draw(self):
         self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)
+
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
     def get_bb(self):

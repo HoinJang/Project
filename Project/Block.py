@@ -14,7 +14,7 @@ class Block:
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
     def get_bb(self):
-        return self.x - Macro.tile_size/2, self.y , self.x + Macro.tile_size/2, self.y + Macro.tile_size/2
+        return self.x - Macro.tile_wsize/2, self.y , self.x + Macro.tile_wsize/2, self.y + Macro.tile_hsize/2
     def collide(self, b):
         left_a, bottom_a, right_a, top_a = self.get_bb()
         left_b, bottom_b, right_b, top_b = b.get_bb()

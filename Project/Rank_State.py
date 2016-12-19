@@ -34,7 +34,7 @@ def update(frame_time):
     pass
 
 def draw_ranking():
-    f = open('Data_File_Temp', 'r')
+    f = open('Ranking_file', 'r')
     score_data = json.load(f)
     f.close()
 

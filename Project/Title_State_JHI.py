@@ -30,7 +30,7 @@ def handle_events(frame_time):
                 Framework_JHI.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
                 Macro.stage = 2
-                Framework_JHI.change_state(Main_State_JHI)
+                Framework_JHI.change_state(Main_State_HI)
     pass
 
 
