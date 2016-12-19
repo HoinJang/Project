@@ -6,7 +6,6 @@ from pico2d import *
 import BackGround
 import Potal
 import Barrel
-import Map
 import Player
 import Macro
 import Framework_JHI

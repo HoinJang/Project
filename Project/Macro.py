@@ -12,6 +12,7 @@ floor_gap = 70
 ladder_width = 60
 ladder_height = 90
 # Draw Coin constant
+coin_size = 30
 # Draw Item constant
 
 # Draw Potal constant
@@ -19,6 +20,9 @@ potal_size = 50
 
 # Draw Barrel constant
 barrel_size = 30
+
+# Not Draw Object
+NotDraw = -100
 
 player_start_x = 25
 player_start_y = 50

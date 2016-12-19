@@ -1,9 +1,8 @@
-import json
 import Macro
 
 from pico2d import *
 
-class Coin:
+class ItemHeart:
     PIXEL_PER_METER = (10.0 / 0.3)
     RUN_SPEED_KMPH = 20.0
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
@@ -17,14 +16,14 @@ class Coin:
         self.x, self.y = x,y
         self.frame = 0
         self.total_frames = 0
-        if Coin.image == None:
-            Coin.image = load_image('Resource/Coin.png')
+        if ItemHeart.image == None:
+            ItemHeart.image = load_image('Resource/ItemHeart.png')
     def draw(self):
         self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)
     def update(self,frame_time):
-        self.total_frames += Coin.FRAMES_PER_ACTION * Coin.ACTION_PER_TIME * frame_time
+        self.total_frames += ItemHeart.FRAMES_PER_ACTION * ItemHeart.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % 7
-        if (self.frame > 6):
+        if (self.frame > 9):
             self.frame = 0
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
@@ -33,7 +32,6 @@ class Coin:
     def collide(self, b):
         left_a, bottom_a, right_a, top_a = self.get_bb()
         left_b, bottom_b, right_b, top_b = b.get_bb()
-
         if left_a > right_b : return False
         if right_a < left_b : return False
         if top_a < bottom_b : return False
