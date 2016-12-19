@@ -5,12 +5,13 @@ import Potal
 import Coin
 import Heart
 import Unbeat
-
+import BackGround
 
 class Map:
     def __init__(self, stage):
-
         if stage == 1:
+            #BackGround
+            self.BackGround = BackGround.BackGround(1)
             #File Init To Tile
             f = open('Stage/Stage1', 'r')
             self.Map_data = f.readlines()
@@ -69,6 +70,8 @@ class Map:
             self.coins[34] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.potals += [Potal.Potal(150,565)]
         elif stage == 2:
+            #BackGround
+            self.BackGround = BackGround.BackGround(2)
             #File Init To Tile
             f = open('Stage/Stage2', 'r')
             self.Map_data = f.readlines()
@@ -120,6 +123,7 @@ class Map:
             self.coins[34] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.potals += [Potal.Potal(150,165)]
     def draw(self):
+        self.BackGround.draw()
         for coin in self.coins:
             coin.draw()
             coin.draw_bb()

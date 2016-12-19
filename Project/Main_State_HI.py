@@ -1,8 +1,8 @@
+
+from pico2d import *
 import random
 import json
 import os
-import Block
-from pico2d import *
 import Framework_JHI
 import MapInit
 import BackGround
@@ -14,16 +14,14 @@ background = None
 
 
 def enter():
-    global map,background,player
+    global map,player
     player = Player.Player()
     map = MapInit.Map(1)
-    background = BackGround.BackGround()
     pass
 def exit():
-    global map,background,player
+    global map,player
 
     del(player)
-    del(background)
     del(map)
     pass
 def pause():
@@ -33,9 +31,8 @@ def resume():
     pass
 
 def draw(frame_time):
-    global map,background,player
+    global map,player
     clear_canvas()
-    background.draw()
     map.draw()
     player.draw()
     update_canvas()
