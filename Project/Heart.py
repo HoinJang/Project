@@ -2,7 +2,7 @@ import Macro
 
 from pico2d import *
 
-class ItemHeart:
+class Heart:
     PIXEL_PER_METER = (10.0 / 0.3)
     RUN_SPEED_KMPH = 20.0
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
@@ -16,12 +16,12 @@ class ItemHeart:
         self.x, self.y = x,y
         self.frame = 0
         self.total_frames = 0
-        if ItemHeart.image == None:
-            ItemHeart.image = load_image('Resource/ItemHeart.png')
+        if Heart.image == None:
+            Heart.image = load_image('Resource/ItemHeart.png')
     def draw(self):
         self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)
     def update(self,frame_time):
-        self.total_frames += ItemHeart.FRAMES_PER_ACTION * ItemHeart.ACTION_PER_TIME * frame_time
+        self.total_frames += Heart.FRAMES_PER_ACTION * Heart.ACTION_PER_TIME * frame_time /1.5
         self.frame = int(self.total_frames) % 7
         if (self.frame > 9):
             self.frame = 0

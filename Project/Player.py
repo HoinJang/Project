@@ -25,12 +25,10 @@ class Player:
         self.jump = False
         self.total_frames = 0
         self.beforejump = 0
-        self.gravity = True
+        self.gravity = False
         self.collide_ladder_x = 0
         self.collide_ladder_y = 0
         self.life_time = 0
-
-
         if Player.image == None:
             Player.image = load_image('Resource/Player1.png')
     def update(self, frame_time):

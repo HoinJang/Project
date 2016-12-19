@@ -22,7 +22,7 @@ potal_size = 50
 barrel_size = 30
 
 # Not Draw Object
-NotDraw = -100
+NotDraw = -300
 
 player_start_x = 25
 player_start_y = 50
