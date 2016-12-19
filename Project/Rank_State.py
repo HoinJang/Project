@@ -47,6 +47,7 @@ def draw_ranking():
         font.draw(100,450-40*i,'TIME:%4.1f, X:%3d, Y:%3d'
                   % (score['Time'],score['X'],score['Y']), (100,150,150))
         i+=1
+
 def bubble_sort(data):
     for i in range(0, len(data)):
          for j in range(0,len(data)):

@@ -8,7 +8,7 @@ class Block:
     def __init__(self,x,y):
         self.x, self.y = x,y
         if Block.image == None:
-            Block.image = load_image('Resource/BlockImage.png')
+            Block.image = load_image('Resource/Block.png')
     def draw(self):
         self.image.draw(self.x, self.y)
     def draw_bb(self):

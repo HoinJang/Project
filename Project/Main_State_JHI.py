@@ -24,7 +24,7 @@ time = 0
 def enter():
     global player,running,block,potal,background,barrels,map
     background = BackGround.BackGround()
-    map = Map.Map()
+    map = Map.Map(2)
     potal = Potal.Potal()
     barrels = [Barrel() for i in range(0)]
     player = Player.Player()
@@ -94,7 +94,14 @@ def handle_events(frame_time):
         if event.type == SDL_QUIT:
             Framework_JHI.quit()
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE):
-                Framework_JHI.quit()
+            f = open('Data_File_Temp', 'r')
+            score_data = json.load(f)
+            f.close()
+            score_data.append({"Time": player.life_time, "X": player.x, "Y": player.y})
+            f = open('Data_File_Temp', 'w')
+            json.dump(score_data, f)
+            f.close()
+            Framework_JHI.change_state(Rank_State)
         else:
             player.handle_event(event)
 def collide(a, b):
