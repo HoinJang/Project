@@ -6,14 +6,17 @@ class Unbeat:
     image = None
     def __init__(self,x,y):
         self.x, self.y = x,y
+        self.collideon = False
         if Unbeat.image == None:
             Unbeat.image = load_image('Resource/ItemUnbeat.png')
     def draw(self):
-        self.image.draw(self.x, self.y)
+        if self.collideon == False:
+            self.image.draw(self.x, self.y)
     def draw_bb(self):
-        draw_rectangle(*self.get_bb())
+        if self.collideon == False:
+            draw_rectangle(*self.get_bb())
     def get_bb(self):
-        return self.x - Macro.coin_size/2, self.y - Macro.coin_size/2 , self.x + Macro.coin_size/2, self.y + Macro.coin_size/2
+        return self.x - Macro.item_size/2, self.y - Macro.item_size/2 , self.x + Macro.item_size/2, self.y + Macro.item_size/2
     def collide(self, b):
         left_a, bottom_a, right_a, top_a = self.get_bb()
         left_b, bottom_b, right_b, top_b = b.get_bb()

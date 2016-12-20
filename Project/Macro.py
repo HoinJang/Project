@@ -12,9 +12,9 @@ floor_gap = 70
 ladder_width = 60
 ladder_height = 90
 # Draw Coin constant
-coin_size = 30
+coin_size = 20
 # Draw Item constant
-
+item_size = 30
 # Draw Potal constant
 potal_size = 50
 

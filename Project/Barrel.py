@@ -1,7 +1,7 @@
 import Macro
 from pico2d import *
 
-class Barrel:
+class Barrel():
     PIXEL_PER_METER = (10.0/0.3)
     RUN_SPEED_KMPH = 20.0
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
@@ -11,13 +11,15 @@ class Barrel:
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 7
     image = None
-    def __init__(self):
+
+    def __init__(self,stage):
         self.frame = 0
         self.x = 50
         self.y = 515
         self.dx = 5
         self.dy = 5
         self.total_frames = 0
+        self.stage = stage
         if Barrel.image == None :
             Barrel.image = load_image('Resource/Barrel.png')
     def update(self, frame_time):

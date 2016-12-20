@@ -7,9 +7,11 @@ import Heart
 import Unbeat
 import BackGround
 
+
 class Map:
     def __init__(self, stage):
-        if stage == 1:
+        self.stage = stage
+        if self.stage == 1:
             #BackGround
             self.BackGround = BackGround.BackGround(1)
             #File Init To Tile
@@ -27,7 +29,7 @@ class Map:
                 for j in range(Macro.tile_wnumber):
                     if self.Map_data[i][j] == '1':
                         self.blocks += [Block.Block(Macro.tile_wsize/2 + Macro.tile_wsize * j,Macro.tile_hsize/2 + Macro.tile_hsize*i)]
-                        self.coins += [Coin.Coin(Macro.tile_wsize/2 + Macro.tile_wsize * j,Macro.tile_hsize/2 + Macro.tile_hsize*i + 60)]
+                        self.coins += [Coin.Coin(Macro.tile_wsize/2 + Macro.tile_wsize * j,Macro.tile_hsize/2 + Macro.tile_hsize*i + 65)]
             self.ladders += [Ladder.Ladder(Macro.ladder_width/2 + Macro.ladder_width * 11, Macro.ladder_height/2 + (Macro.tile_hsize)*1)]
             self.ladders += [Ladder.Ladder(Macro.ladder_width/2 + Macro.ladder_width * 3, Macro.ladder_height/2 + (Macro.tile_hsize)*4)]
             self.ladders += [Ladder.Ladder(Macro.ladder_width/2 + Macro.ladder_width * 11, Macro.ladder_height/2 + (Macro.tile_hsize)*7)]
@@ -41,15 +43,9 @@ class Map:
             self.unbeats += [Unbeat.Unbeat(self.coins[90].x,self.coins[90].y)]
             self.unbeats += [Unbeat.Unbeat(self.coins[34].x,self.coins[34].y)]
             #Coin Delete Hard Coding
-            self.coins[96] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[95] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[94] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[93] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[92] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[91] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[90] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[77] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.coins[1] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
+            self.coins[78] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[0] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[13] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[14] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
@@ -68,8 +64,8 @@ class Map:
             self.coins[46] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[16] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[34] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
-            self.potals += [Potal.Potal(150,565)]
-        elif stage == 2:
+            self.potals += [Potal.Potal(self.blocks[78].x,self.blocks[78].y+Macro.potal_size/2 + Macro.tile_hsize/2)]
+        elif self.stage == 2:
             #BackGround
             self.BackGround = BackGround.BackGround(2)
             #File Init To Tile
