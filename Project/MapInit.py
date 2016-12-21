@@ -6,7 +6,7 @@ import Coin
 import Heart
 import Unbeat
 import BackGround
-
+import StageImage
 
 class Map:
     def __init__(self, stage):
@@ -14,6 +14,8 @@ class Map:
         if self.stage == 1:
             #BackGround
             self.BackGround = BackGround.BackGround(1)
+            #StageImage
+            self.StageImage = StageImage.StageImage(1)
             #File Init To Tile
             f = open('Stage/Stage1', 'r')
             self.Map_data = f.readlines()
@@ -68,6 +70,8 @@ class Map:
         if self.stage == 2:
             #BackGround
             self.BackGround = BackGround.BackGround(2)
+            #StageImage
+            self.StageImage = StageImage.StageImage(2)
             #File Init To Tile
             f = open('Stage/Stage2', 'r')
             self.Map_data = f.readlines()
@@ -125,6 +129,8 @@ class Map:
         elif self.stage == 3:
             #BackGround
             self.BackGround = BackGround.BackGround(3)
+            #StageImage
+            self.StageImage = StageImage.StageImage(3)
             #File Init To Tile
             f = open('Stage/Stage3', 'r')
             self.Map_data = f.readlines()
@@ -178,6 +184,8 @@ class Map:
         elif self.stage == 4:
             #BackGround
             self.BackGround = BackGround.BackGround(4) ##
+            #StageImage
+            self.StageImage = StageImage.StageImage(4)
             #File Init To Tile
             f = open('Stage/Stage4', 'r')
             self.Map_data = f.readlines()
@@ -231,6 +239,8 @@ class Map:
         elif self.stage == 5:
             #BackGround
             self.BackGround = BackGround.BackGround(5) ##
+            #StageImage
+            self.StageImage = StageImage.StageImage(5)
             #File Init To Tile
             f = open('Stage/Stage5', 'r')
             self.Map_data = f.readlines()
@@ -287,22 +297,17 @@ class Map:
         self.BackGround.draw()
         for coin in self.coins:
             coin.draw()
-            coin.draw_bb()
         for block in self.blocks:
             block.draw()
-            block.draw_bb()
         for ladder in self.ladders:
             ladder.draw()
-            ladder.draw_bb()
         for heart in self.hearts:
             heart.draw()
-            heart.draw_bb()
         for unbeat in self.unbeats:
             unbeat.draw()
-            unbeat.draw_bb()
         for potal in self.potals:
             potal.draw()
-            potal.draw_bb()
+        self.StageImage.draw()
     def update(self, frame_time):
         for potal in self.potals:
             potal.update(frame_time)
@@ -310,3 +315,5 @@ class Map:
             coin.update(frame_time)
         for heart in self.hearts:
             heart.update(frame_time)
+        self.StageImage.update()
+

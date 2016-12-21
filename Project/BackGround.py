@@ -20,4 +20,4 @@ class BackGround:
     def draw(self):
         self.image.draw(self.x, self.y)
     def update(self):
-        self.image.draw(self.x, self.y)
+        pass
