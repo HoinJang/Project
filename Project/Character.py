@@ -78,7 +78,7 @@ class Character:
     def handle_left_jump(self,distance):
         self.imagestate = 3
         self.frame = 0
-        self.x = max(0, self.x - distance/2)
+        self.x = max(0, self.x - distance/1.5)
         if self.jump :
             self.dy += distance * 2
             if (self.dy > 50):
@@ -91,7 +91,7 @@ class Character:
     def handle_right_jump(self,distance):
         self.imagestate = 2
         self.frame = 3
-        self.x = min(800, self.x + distance/2)
+        self.x = min(800, self.x + distance/1.5)
         if self.jump :
             self.dy += distance * 2
             if (self.dy > 50):
