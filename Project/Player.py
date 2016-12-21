@@ -17,7 +17,7 @@ class Player:
 
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, LEFT_JUMP, RIGHT_JUMP, LADDER_UP, LADDER_DOWN, LADDER_STAND  = 0, 1, 2, 3, 4, 5, 6, 7, 8
 
-    def __init__(self):
+    def __init__(self , x, y):
         self.x, self.y = 75, 150
         self.imagestate = 2
         self.frame = 4

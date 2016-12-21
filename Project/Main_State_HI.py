@@ -1,9 +1,9 @@
-
 from pico2d import *
 import Framework_JHI
 import MapInit
 import Character
 import Barrel
+import Macro
 
 name = "Main"
 map = None
@@ -15,7 +15,7 @@ def enter():
     global map,stage,character,barrels
     stage = 1
     map = MapInit.Map(stage)
-    character = Character.Character()
+    character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
     barrels = [Barrel() for i in range(0)]
     pass
 def exit():
@@ -38,7 +38,7 @@ def draw(frame_time):
     update_canvas()
 
 def update(frame_time):
-    global map,character
+    global map,character,stage
     character.update(frame_time)
     map.update(frame_time)
     for block in map.blocks:
@@ -75,6 +75,25 @@ def update(frame_time):
         if unbeat.collide(character) and unbeat.collideon == False:
             unbeat.collideon = True
             print(2)
+    for potal in map.potals:
+        if potal.collide(character):
+            if stage == 1:
+                stage = 2
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
+            elif stage == 2:
+                stage = 3
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
+            elif stage == 3:
+                stage = 4
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
+            elif stage == 4:
+                stage = 5
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
+
 
 
 
@@ -88,9 +107,23 @@ def handle_events(frame_time):
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE):
                 Framework_JHI.quit()
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_F1):
-            stage = 2
-            map = MapInit.Map(stage)
-            character = Character.Character()
+            if stage == 1:
+                stage = 2
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
+            elif stage == 2:
+                stage = 3
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
+            elif stage == 3:
+                stage = 4
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
+            elif stage == 4:
+                stage = 5
+                map = MapInit.Map(stage)
+                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
+
 
 def collide(a, b):
     left_a, bottom_a, right_a, top_a = a.get_bb()

@@ -8,8 +8,15 @@ class BackGround:
             if stage == 1:
                 if BackGround.image == None:
                     BackGround.image = load_image("Resource/BackGround/BackGround1.png")
-            if stage == 2:
+            elif stage == 2:
                     BackGround.image = load_image("Resource/BackGround/BackGround2.png")
+            elif stage == 3:
+                    BackGround.image = load_image("Resource/BackGround/BackGround3.png")
+            elif stage == 4:
+                    BackGround.image = load_image("Resource/BackGround/BackGround4.png")
+            elif stage == 5:
+                    BackGround.image = load_image("Resource/BackGround/BackGround5.png")
+
     def draw(self):
         self.image.draw(self.x, self.y)
     def update(self):

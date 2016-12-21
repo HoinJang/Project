@@ -15,9 +15,10 @@ class Character:
 
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND , LEFT_JUMP, RIGHT_JUMP, LADDER_UP, LADDER_DOWN, LADDER_STAND = 0, 1, 2, 3, 4, 5, 6, 7, 8
 
-    def __init__(self):
-        self.x, self.y = 25, 95
+    def __init__(self,x,y):
+        self.x, self.y = x, y
         self.dy = 0
+        self.hp = 5
         self.jump_possible = False
         self.jump = False
         self.imagestate = 2

@@ -24,8 +24,11 @@ barrel_size = 30
 # Not Draw Object
 NotDraw = -300
 
-player_start_x = 25
-player_start_y = 50
+player_start_x1 = 25
+player_start_y1 = 95
+player_start_x2 = 25
+player_start_y2 = 600
+
 
 player_size = 50
 Item_size = 50

@@ -30,3 +30,11 @@ class Potal:
         draw_rectangle(*self.get_bb())
     def get_bb(self):
         return self.x - Macro.potal_size+ 5, self.y - Macro.potal_size/ 2 + 5, self.x +Macro.potal_size -5 , self.y + Macro.potal_size / 2 - 5
+    def collide(self, b):
+        left_a, bottom_a, right_a, top_a = self.get_bb()
+        left_b, bottom_b, right_b, top_b = b.get_bb()
+        if left_a > right_b : return False
+        if right_a < left_b : return False
+        if top_a < bottom_b : return False
+        if bottom_a > top_b : return False
+        return True
