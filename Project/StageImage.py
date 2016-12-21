@@ -7,7 +7,6 @@ class StageImage:
             self.y = 300
             self.time =1
             if stage == 1:
-                if StageImage.image == None:
                     StageImage.image = load_image("Resource/BackGround/Stage1.png")
             elif stage == 2:
                     StageImage.image = load_image("Resource/BackGround/Stage2.png")

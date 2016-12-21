@@ -13,6 +13,7 @@ class Coin:
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 5
     image = None
+    sound = None
     def __init__(self,x,y):
         self.x, self.y = x,y
         self.frame = 0
@@ -20,6 +21,8 @@ class Coin:
         self.collideon = False
         if Coin.image == None:
             Coin.image = load_image('Resource/Coin.png')
+        if Coin.sound == None:
+            Coin.sound = load_wav('Sound/GetCoin.wav')
     def draw(self):
         if(self.collideon == False):
             self.image.clip_draw(self.frame * Macro.coin_size, 0, Macro.coin_size, Macro.coin_size, self.x, self.y)

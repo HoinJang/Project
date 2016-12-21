@@ -1,6 +1,5 @@
 import Framework_JHI
 import Title_State_JHI
-import json
 from pico2d import *
 
 
@@ -10,7 +9,7 @@ font = None
 def enter():
     global image
     global font
-    image = load_image('Resource/blackboard.png')
+    image = load_image('Resource/Rankboard.png')
     font = load_font('Resource/ENCR10B.TTF', 40)
 def exit():
     global image
@@ -25,11 +24,12 @@ def resume():
 def handle_events(frame_time):
     events = get_events()
     for event in events:
-        if event.type == SDL_QUIT:
+        if (event.type, event.key) == (SDL_KEYDOWN , SDLK_ESCAPE):
             Framework_JHI.quit()
-        else:
-            if (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
-                Framework_JHI.change_state(Title_State_JHI)
+        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_q):
+            Framework_JHI.quit()
+        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
+            Framework_JHI.change_state(Title_State_JHI)
 def update(frame_time):
     pass
 
@@ -39,19 +39,18 @@ def draw_ranking():
     f.close()
 
     bubble_sort(score_data)
-    score_data = score_data[:10]
+    score_data = score_data[:5]
 
-    font.draw(280,500,'[RANKING]', (255,255,0))
     i = 0
     for score in score_data:
-        font.draw(100,450-40*i,'TIME:%4.1f, X:%3d, Y:%3d'
-                  % (score['Time'],score['X'],score['Y']), (100,150,150))
+        font.draw(100,400-40*i,'%d. Score:%5d'
+                  % (i+1,score['Score']), (250,250,250))
         i+=1
 
 def bubble_sort(data):
     for i in range(0, len(data)):
          for j in range(0,len(data)):
-            if(data[i]['Time']<data[j]['Time']):
+            if(data[i]['Score']>data[j]['Score']):
                 data[i], data[j] = data[j], data[i]
 
 def draw(frame_time):

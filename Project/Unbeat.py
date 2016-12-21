@@ -4,11 +4,14 @@ from pico2d import *
 
 class Unbeat:
     image = None
+    sound = None
     def __init__(self,x,y):
         self.x, self.y = x,y
         self.collideon = False
         if Unbeat.image == None:
             Unbeat.image = load_image('Resource/ItemUnbeat.png')
+        if Unbeat.sound == None:
+            Unbeat.sound = load_wav('Sound/GetItem.wav')
     def draw(self):
         if self.collideon == False:
             self.image.draw(self.x, self.y)

@@ -7,6 +7,8 @@ import Macro
 import StageImage
 import HPbar
 import UnbeatTrue
+import Rank_State
+import GameOver_State_HI
 name = "Main"
 map = None
 stage = None
@@ -17,18 +19,24 @@ dtime = None
 stageimage = None
 hpbar = None
 unbeatbar = None
-
+font = None
+score = None
+HP = None
 def enter():
-    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar
+    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar,font,score,HP
     dtime = 100
     time = 0
     stage = 1
+    score = 0
+    HP = 5
     stageimage = StageImage.StageImage(1)
     map = MapInit.Map(stage)
     character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
     barrels = [Barrel() for i in range(0)]
     unbeatbar = UnbeatTrue.UnbeatTrue(True,character.x,character.y)
     hpbar = HPbar.HPbar(character.hp)
+    font = load_font('Resource/ENCR10B.TTF', 20)
+    Framework_JHI.reset_time()
     pass
 def exit():
     global map,character,barrels,stageimage,hpbar,unbeatbar
@@ -46,23 +54,22 @@ def resume():
     pass
 
 def draw(frame_time):
-    global map,character,barrels,stageimage,hpbar,unbeatbar
+    global map,character,barrels,stageimage,hpbar,unbeatbar,font,score
     clear_canvas()
     map.draw()
     for barrel in barrels:
         barrel.draw()
-        barrel.draw_bb()
     character.draw()
-    character.draw_bb()
     hpbar.draw()
     unbeatbar.draw()
+    font.draw(Macro.width/2-50, Macro.height-10, 'Score:%d' % (score), (0, 0, 0))
     stageimage.draw()
     update_canvas()
 
 def update(frame_time):
-    global map,character,stage,time,barrels,dtime,stageimage,hpbar,unbeatbar
+    global map,character,stage,time,barrels,dtime,stageimage,hpbar,unbeatbar,score,HP
     ####################################
-    hpbar = HPbar.HPbar(character.hp)
+    hpbar = HPbar.HPbar(HP)
     unbeatbar = UnbeatTrue.UnbeatTrue(character.unbeat,character.x,character.y+character.dy)
     stageimage.update()
     time += 1
@@ -98,24 +105,29 @@ def update(frame_time):
     for coin in map.coins:
         if coin.collide(character) and coin.collideon == False:
             coin.collideon = True
-            print(1234)
+            score += 100
+            coin.sound.set_volume(20)
+            coin.sound.play()
     for heart in map.hearts:
         if heart.collide(character) and heart.collideon == False:
             heart.collideon = True
-            if character.hp <5:
-                character.hp +=1
-            print(1)
+            if HP < 5:
+                HP += 1
+            score += 1000
     for unbeat in map.unbeats:
         if unbeat.collide(character) and unbeat.collideon == False:
             unbeat.collideon = True
             character.unbeat = True
-            print(2)
+            score += 1000
+            unbeat.sound.set_volume(20)
+            unbeat.sound.play()
     for barrel in barrels:
         if barrel.collide(character) and barrel.collideon == False:
             barrel.collideon = True
             if character.unbeat == False:
-                character.hp -= 1
-            print(3)
+                HP -= 1
+            else:
+                score += 100
 
     for potal in map.potals:
         if potal.collide(character):
@@ -127,6 +139,7 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
+                Framework_JHI.reset_time()
             elif stage == 2:
                 stage = 3
                 map = MapInit.Map(stage)
@@ -135,6 +148,7 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
+                Framework_JHI.reset_time()
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
@@ -143,6 +157,7 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
+                Framework_JHI.reset_time()
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
@@ -151,6 +166,19 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
+                Framework_JHI.reset_time()
+            elif stage == 5:
+                f = open('Ranking_file', 'r')
+                score_data = json.load(f)
+                f.close()
+                score_data.append({"Score": score})
+                f = open('Ranking_file', 'w')
+                json.dump(score_data, f)
+                f.close()
+                Framework_JHI.change_state(Rank_State)
+    if HP < 0:
+        Framework_JHI.change_state(GameOver_State_HI)
+
 
 def handle_events(frame_time):
     global map,stage,character,barrels,dtime,time,stageimage
@@ -194,6 +222,16 @@ def handle_events(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
+            elif stage == 5:
+                f = open('Ranking_file', 'r')
+                score_data = json.load(f)
+                f.close()
+                score_data.append({"Score": score})
+                f = open('Ranking_file', 'w')
+                json.dump(score_data, f)
+                f.close()
+                Framework_JHI.change_state(Rank_State)
+
 
 
 def collide(a, b):

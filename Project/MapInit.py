@@ -122,7 +122,6 @@ class Map:
             self.coins[46] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.coins[16] = Coin.Coin(Macro.NotDraw, Macro.NotDraw)
             self.potals += [Potal.Potal(self.blocks[2].x,self.blocks[2].y+Macro.potal_size/2 + Macro.tile_hsize/2)]
-            print(self.potals[0].x , self.potals[0].y)
         elif self.stage == 3:
             #BackGround
             self.BackGround = BackGround.BackGround(3)

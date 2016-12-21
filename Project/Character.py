@@ -1,5 +1,7 @@
 from pico2d import *
 import Macro
+import GameOver_State_HI
+import Framework_JHI
 
 class Character:
     PIXEL_PER_METER = (10.0/0.3) # 24M*18M
@@ -159,6 +161,7 @@ class Character:
                 self.jump = True
         pass
     def update(self, frame_time):
+
         self.life_time += frame_time
         distance = Character.RUN_SPEED_PPS * frame_time
         self.total_frames += Character.FRAMES_PER_ACTION * Character.ACTION_PER_TIME * frame_time

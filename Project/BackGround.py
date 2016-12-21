@@ -6,7 +6,6 @@ class BackGround:
             self.x = 400
             self.y = 300
             if stage == 1:
-                if BackGround.image == None:
                     BackGround.image = load_image("Resource/BackGround/BackGround1.png")
             elif stage == 2:
                     BackGround.image = load_image("Resource/BackGround/BackGround2.png")
