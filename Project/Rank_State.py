@@ -6,16 +6,21 @@ from pico2d import *
 name = "RankState"
 image = None
 font = None
+sound = None
 def enter():
     global image
-    global font
+    global font,sound
     image = load_image('Resource/Rankboard.png')
     font = load_font('Resource/ENCR10B.TTF', 40)
+    sound = load_wav('Sound/EndSound.wav')
+    sound.set_volume(30)
+    sound.play()
 def exit():
     global image
-    global font
+    global font,sound
     del(image)
     del(font)
+    del(sound)
 def pause():
     pass
 
@@ -43,7 +48,7 @@ def draw_ranking():
 
     i = 0
     for score in score_data:
-        font.draw(100,400-40*i,'%d. Score:%5d'
+        font.draw(100,400-40*i,'%d. Score:%10d'
                   % (i+1,score['Score']), (250,250,250))
         i+=1
 

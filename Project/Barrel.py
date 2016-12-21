@@ -12,6 +12,7 @@ class Barrel():
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 7
     image = None
+    sound = None
 
     def __init__(self,stage):
         self.stage = stage
@@ -46,6 +47,8 @@ class Barrel():
         self.dy = 5
         self.total_frames = 0
         self.collideon = False
+        if Barrel.sound == None :
+            Barrel.sound = load_wav('Sound/Break.wav')
         if Barrel.image == None :
             Barrel.image = load_image('Resource/Barrel.png')
     def update(self, frame_time):

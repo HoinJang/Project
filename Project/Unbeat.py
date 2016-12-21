@@ -11,7 +11,7 @@ class Unbeat:
         if Unbeat.image == None:
             Unbeat.image = load_image('Resource/ItemUnbeat.png')
         if Unbeat.sound == None:
-            Unbeat.sound = load_wav('Sound/GetItem.wav')
+            Unbeat.sound = load_wav('Sound/GetUnbeat.wav')
     def draw(self):
         if self.collideon == False:
             self.image.draw(self.x, self.y)

@@ -14,7 +14,8 @@ class Character:
     FRAMES_PER_ACTION = 5
 
     image = None
-
+    Jsound = None
+    Csound = None
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND , LEFT_JUMP, RIGHT_JUMP, LADDER_UP, LADDER_DOWN, LADDER_STAND = 0, 1, 2, 3, 4, 5, 6, 7, 8
 
     def __init__(self,x,y):
@@ -37,6 +38,10 @@ class Character:
         self.unbeat_time = 0
         if Character.image == None:
             Character.image = load_image('Resource/Player1.png')
+        if Character.Jsound == None:
+            Character.Jsound = load_wav('Sound/Jump.wav')
+        if Character.Csound == None:
+            Character.Csound = load_wav('Sound/Hpminus.wav')
 
     def handle_left_stand(self,distance):
         self.state = self.LEFT_STAND
@@ -156,9 +161,13 @@ class Character:
             if self.state in (self.RIGHT_RUN,self.RIGHT_STAND):
                 self.state = self.RIGHT_JUMP
                 self.jump = True
+                self.Jsound.set_volume(10)
+                self.Jsound.play()
             elif self.state in (self.LEFT_RUN, self.LEFT_STAND):
                 self.state = self.LEFT_JUMP
                 self.jump = True
+                self.Jsound.set_volume(10)
+                self.Jsound.play()
         pass
     def update(self, frame_time):
 

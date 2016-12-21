@@ -12,6 +12,7 @@ class Heart:
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 5
     image = None
+    sound = None
     def __init__(self,x,y):
         self.x, self.y = x,y
         self.frame = 0
@@ -19,6 +20,8 @@ class Heart:
         self.collideon = False
         if Heart.image == None:
             Heart.image = load_image('Resource/ItemHeart.png')
+        if Heart.sound == None:
+            Heart.sound = load_wav('Sound/GetItem.wav')
     def draw(self):
         if self.collideon == False:
             self.image.clip_draw(self.frame * 30, 0, 30, 30, self.x, self.y)

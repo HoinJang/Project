@@ -22,8 +22,10 @@ unbeatbar = None
 font = None
 score = None
 HP = None
+StartSound = None
+BGM = None
 def enter():
-    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar,font,score,HP
+    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar,font,score,HP,StartSound,BGM
     dtime = 100
     time = 0
     stage = 1
@@ -37,15 +39,25 @@ def enter():
     hpbar = HPbar.HPbar(character.hp)
     font = load_font('Resource/ENCR10B.TTF', 20)
     Framework_JHI.reset_time()
-    pass
+    if StartSound == None :
+        StartSound = load_wav('Sound/start.wav')
+    StartSound.set_volume(30)
+    StartSound.play()
+    if BGM == None:
+        BGM = load_wav('Sound/BGM.ogg')
+    BGM.set_volume(20)
+    BGM.repeat_play()
+
 def exit():
-    global map,character,barrels,stageimage,hpbar,unbeatbar
+    global map,character,barrels,stageimage,hpbar,unbeatbar,StartSound,BGM
     del(map)
     del(character)
     del(barrels)
     del(stageimage)
     del(hpbar)
     del(unbeatbar)
+    del(StartSound)
+    del(BGM)
     pass
 def pause():
     pass
@@ -69,6 +81,8 @@ def draw(frame_time):
 def update(frame_time):
     global map,character,stage,time,barrels,dtime,stageimage,hpbar,unbeatbar,score,HP
     ####################################
+    if character.y < 0 :
+        HP -= 1
     hpbar = HPbar.HPbar(HP)
     unbeatbar = UnbeatTrue.UnbeatTrue(character.unbeat,character.x,character.y+character.dy)
     stageimage.update()
@@ -106,7 +120,7 @@ def update(frame_time):
         if coin.collide(character) and coin.collideon == False:
             coin.collideon = True
             score += 100
-            coin.sound.set_volume(20)
+            coin.sound.set_volume(40)
             coin.sound.play()
     for heart in map.hearts:
         if heart.collide(character) and heart.collideon == False:
@@ -114,20 +128,26 @@ def update(frame_time):
             if HP < 5:
                 HP += 1
             score += 1000
+            heart.sound.set_volume(40)
+            heart.sound.play()
     for unbeat in map.unbeats:
         if unbeat.collide(character) and unbeat.collideon == False:
             unbeat.collideon = True
             character.unbeat = True
             score += 1000
-            unbeat.sound.set_volume(20)
+            unbeat.sound.set_volume(40)
             unbeat.sound.play()
     for barrel in barrels:
         if barrel.collide(character) and barrel.collideon == False:
             barrel.collideon = True
             if character.unbeat == False:
                 HP -= 1
+                character.Csound.set_volume(40)
+                character.Csound.play()
             else:
                 score += 100
+                barrel.sound.set_volume(40)
+                barrel.sound.play()
 
     for potal in map.potals:
         if potal.collide(character):
@@ -139,7 +159,8 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
-                Framework_JHI.reset_time()
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 2:
                 stage = 3
                 map = MapInit.Map(stage)
@@ -148,7 +169,8 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
-                Framework_JHI.reset_time()
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
@@ -157,7 +179,8 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
-                Framework_JHI.reset_time()
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
@@ -166,7 +189,8 @@ def update(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
-                Framework_JHI.reset_time()
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 5:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)
@@ -176,6 +200,7 @@ def update(frame_time):
                 json.dump(score_data, f)
                 f.close()
                 Framework_JHI.change_state(Rank_State)
+
     if HP < 0:
         Framework_JHI.change_state(GameOver_State_HI)
 
@@ -198,6 +223,8 @@ def handle_events(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 2:
                 stage = 3
                 map = MapInit.Map(stage)
@@ -206,6 +233,8 @@ def handle_events(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 100
                 time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
@@ -214,6 +243,8 @@ def handle_events(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
@@ -222,6 +253,8 @@ def handle_events(frame_time):
                 barrels = [Barrel() for i in range(0)]
                 dtime = 50
                 time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
             elif stage == 5:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)

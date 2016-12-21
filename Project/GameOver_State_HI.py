@@ -8,14 +8,17 @@ from pico2d import *
 
 name = "OverState"
 image = None
-
+sound = None
 def enter():
-    global image
+    global image,sound
     image = load_image('Resource/End.png')
-
+    sound = load_wav('Sound/EndSound.wav')
+    sound.set_volume(30)
+    sound.play()
 def exit():
-    global image
+    global image,sound
     del(image)
+    del(sound)
 
 def handle_events(frame_time):
     events = get_events()
