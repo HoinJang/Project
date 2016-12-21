@@ -54,13 +54,13 @@ class Barrel():
         if self.stage == 1 or self.stage == 2:
             if self.y == 405:
                 self.x -= self.dx
-            elif self.y == 315:
+            elif self.y == 310:
                 self.x += self.dx
-            elif self.y == 225:
+            elif self.y == 220:
                 self.x -= self.dx
-            elif self.y == 135:
+            elif self.y == 130:
                 self.x += self.dx
-            elif self.y == 50:
+            elif self.y == 40:
                 self.x -= self.dx
             if self.x >= 770:
                 self.y -= self.dy
@@ -126,3 +126,12 @@ class Barrel():
             draw_rectangle(*self.get_bb())
     def get_bb(self):
         return self.x - Macro.barrel_size/ 2 + 5, self.y - Macro.barrel_size/ 2 + 5, self.x +Macro.barrel_size/ 2 -5 , self.y + Macro.barrel_size / 2 - 5
+    def collide(self, b):
+        left_a, bottom_a, right_a, top_a = self.get_bb()
+        left_b, bottom_b, right_b, top_b = b.get_bb()
+
+        if left_a > right_b : return False
+        if right_a < left_b : return False
+        if top_a < bottom_b : return False
+        if bottom_a > top_b : return False
+        return True

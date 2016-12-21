@@ -31,6 +31,8 @@ class Character:
         self.collide_ladder_y = 0
         self.LRmove = False
         self.UDmove = False
+        self.unbeat = False
+        self.unbeat_time = 0
         if Character.image == None:
             Character.image = load_image('Resource/Player1.png')
 
@@ -164,6 +166,11 @@ class Character:
         self.handle_state[self.state](self, distance)
         if(self.gravity):
             self.y -= distance
+        if(self.unbeat):
+            self.unbeat_time +=1
+            if(self.unbeat_time > 500):
+                self.unbeat_time = 0
+                self.unbeat = False
         pass
     def draw(self):
         self.image.clip_draw(self.frame * Macro.player_size, self.imagestate * Macro.player_size, Macro.player_size, Macro.player_size, self.x, self.y + self.dy)
