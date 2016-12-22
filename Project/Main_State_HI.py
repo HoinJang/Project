@@ -39,12 +39,10 @@ def enter():
     hpbar = HPbar.HPbar(character.hp)
     font = load_font('Resource/ENCR10B.TTF', 20)
     Framework_JHI.reset_time()
-    if StartSound == None :
-        StartSound = load_wav('Sound/start.wav')
+    StartSound = load_wav('Sound/start.wav')
     StartSound.set_volume(30)
     StartSound.play()
-    if BGM == None:
-        BGM = load_wav('Sound/BGM.ogg')
+    BGM = load_wav('Sound/BGM.ogg')
     BGM.set_volume(20)
     BGM.repeat_play()
 
@@ -152,46 +150,46 @@ def update(frame_time):
     for potal in map.potals:
         if potal.collide(character):
             if stage == 1:
-                stage = 2
-                map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(2)
-                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
-                barrels = [Barrel() for i in range(0)]
-                dtime = 100
-                time = 0
-                StartSound.set_volume(30)
-                StartSound.play()
-            elif stage == 2:
                 stage = 3
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(3)
+                stageimage = StageImage.StageImage(2)
                 character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 100
+                dtime = 60
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(4)
+                stageimage = StageImage.StageImage(3)
                 character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 50
+                dtime = 25
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(5)
+                stageimage = StageImage.StageImage(4)
                 character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 50
+                dtime = 25
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 5:
+                stage = 6
+                map = MapInit.Map(stage)
+                stageimage = StageImage.StageImage(5)
+                character = Character.Character(440,300)
+                barrels = [Barrel() for i in range(0)]
+                dtime = 25
+                time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
+            elif stage == 6:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)
                 f.close()
@@ -216,46 +214,46 @@ def handle_events(frame_time):
                 Framework_JHI.quit()
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_F1):
             if stage == 1:
-                stage = 2
-                map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(2)
-                character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
-                barrels = [Barrel() for i in range(0)]
-                dtime = 100
-                time = 0
-                StartSound.set_volume(30)
-                StartSound.play()
-            elif stage == 2:
                 stage = 3
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(3)
+                stageimage = StageImage.StageImage(2)
                 character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 100
+                dtime = 60
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(4)
+                stageimage = StageImage.StageImage(3)
                 character = Character.Character(Macro.player_start_x1,Macro.player_start_y1)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 50
+                dtime = 25
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
-                stageimage = StageImage.StageImage(5)
+                stageimage = StageImage.StageImage(4)
                 character = Character.Character(Macro.player_start_x2,Macro.player_start_y2)
                 barrels = [Barrel() for i in range(0)]
-                dtime = 50
+                dtime = 25
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
             elif stage == 5:
+                stage = 6
+                map = MapInit.Map(stage)
+                stageimage = StageImage.StageImage(5)
+                character = Character.Character(440,300)
+                barrels = [Barrel() for i in range(0)]
+                dtime = 25
+                time = 0
+                StartSound.set_volume(30)
+                StartSound.play()
+            elif stage == 6:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)
                 f.close()

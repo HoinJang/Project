@@ -33,6 +33,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Stage/Stage3" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Stage/Stage4" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Stage/Stage5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Stage/Stage6" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StageImage.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Start_State_JHI.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Title_State_JHI.py" />
@@ -61,18 +62,18 @@
       <file leaf-file-name="Main_State_JHI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2844">
-              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+            <state relative-caret-position="2340">
+              <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main_State_HI.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main_State_HI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main_State_HI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="254">
+              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -80,73 +81,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Potal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Potal.py">
+      <file leaf-file-name="Stage5" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stage/Stage5">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1046">
-              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameOver_State_HI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GameOver_State_HI.py">
+      <file leaf-file-name="Barrel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Barrel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="794">
+              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Player.py">
+      <file leaf-file-name="MapInit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MapInit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-              <folding>
-                <element signature="e#1405#1543#0" expanded="false" />
-                <element signature="e#1595#1734#0" expanded="false" />
-                <element signature="e#1787#1868#0" expanded="false" />
-                <element signature="e#1917#2151#0" expanded="false" />
-                <element signature="e#2201#2438#0" expanded="false" />
-                <element signature="e#2488#2950#0" expanded="false" />
-                <element signature="e#3001#3466#0" expanded="false" />
-                <element signature="e#3520#3890#0" expanded="false" />
-                <element signature="e#3946#4317#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="756">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Character.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Character.py">
+      <file leaf-file-name="Stage6" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stage/Stage6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1908">
-              <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-                <element signature="e#1466#1545#0" expanded="false" />
-                <element signature="e#1597#1677#0" expanded="false" />
-                <element signature="e#1951#2129#0" expanded="false" />
-                <element signature="e#2182#2263#0" expanded="false" />
-                <element signature="e#2743#3114#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="648">
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rank_State.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rank_State.py">
+      <file leaf-file-name="Stage3" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stage/Stage3">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="684">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,24 +141,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StageImage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StageImage.py">
+      <file leaf-file-name="Stage2" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stage/Stage2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="684">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Title_State_JHI.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
+      <file leaf-file-name="Stage1" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stage/Stage1">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="432">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/MyGame_JHI.py" />
         <option value="$PROJECT_DIR$/Resource/BackGround.py" />
         <option value="$PROJECT_DIR$/Resource/BackGroundClass.py" />
         <option value="$PROJECT_DIR$/BackGroundClass.py" />
@@ -235,20 +212,21 @@
         <option value="$PROJECT_DIR$/Stage/HpBar.py" />
         <option value="$PROJECT_DIR$/HPbar.py" />
         <option value="$PROJECT_DIR$/UnbeatTrue.py" />
-        <option value="$PROJECT_DIR$/MapInit.py" />
         <option value="$PROJECT_DIR$/BackGround.py" />
         <option value="$PROJECT_DIR$/StageImage.py" />
         <option value="$PROJECT_DIR$/Ranking_file" />
         <option value="$PROJECT_DIR$/Coin.py" />
         <option value="$PROJECT_DIR$/Unbeat.py" />
         <option value="$PROJECT_DIR$/Heart.py" />
-        <option value="$PROJECT_DIR$/Barrel.py" />
         <option value="$PROJECT_DIR$/Rank_State.py" />
         <option value="$PROJECT_DIR$/Player.py" />
-        <option value="$PROJECT_DIR$/Character.py" />
-        <option value="$PROJECT_DIR$/Main_State_HI.py" />
         <option value="$PROJECT_DIR$/GameOver_State_HI.py" />
         <option value="$PROJECT_DIR$/Title_State_JHI.py" />
+        <option value="$PROJECT_DIR$/Character.py" />
+        <option value="$PROJECT_DIR$/Stage/Stage6" />
+        <option value="$PROJECT_DIR$/Barrel.py" />
+        <option value="$PROJECT_DIR$/MapInit.py" />
+        <option value="$PROJECT_DIR$/Main_State_HI.py" />
       </list>
     </option>
   </component>
@@ -283,20 +261,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Project">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -346,6 +310,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Project">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,23 +369,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Maptool" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Maptool.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="Player" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -438,6 +399,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project" />
       <option name="SCRIPT_NAME" value="C:\Escape\Project\Main_State_HI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main_State_HI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main_State_HI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -579,17 +557,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.MyGame_JHI" />
       <item index="1" class="java.lang.String" itemvalue="Python.Main_State_JHI" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Maptool" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Player" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Main_JHI" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Player" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Main_JHI" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Main_State_HI" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.MyGame_JHI" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Main_JHI" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Main_State_JHI" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Player" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Maptool" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Main_State_HI" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Main_JHI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Main_State_JHI" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Player" />
       </list>
     </recent_temporary>
   </component>
@@ -666,11 +644,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Resource/N/HeartHp.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resource/BackGround.PNG" />
     <entry file="file://$PROJECT_DIR$/Resource/Block.png">
       <provider selected="true" editor-type-id="images">
@@ -724,32 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stage/Stage3">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stage/Stage5">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ladder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stage/Stage2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -757,23 +708,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stage/HpBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/HpBar.py" />
     <entry file="file://$PROJECT_DIR$/HPbar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,19 +731,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stage/Stage1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Macro.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="972">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,15 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MapInit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="132" column="32" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,15 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="49" selection-start-line="0" selection-start-column="49" selection-end-line="0" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Framework_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2590">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="13" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,23 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Barrel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BackGround.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +790,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Potal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1046">
+        <state relative-caret-position="1332">
           <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding />
         </state>
@@ -904,7 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
+        <state relative-caret-position="648">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
             <element signature="e#1405#1543#0" expanded="false" />
@@ -920,18 +814,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Rank_State.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Character.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1908">
-          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+        <state relative-caret-position="1008">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
             <element signature="e#1466#1545#0" expanded="false" />
             <element signature="e#1597#1677#0" expanded="false" />
             <element signature="e#1951#2129#0" expanded="false" />
             <element signature="e#2182#2263#0" expanded="false" />
             <element signature="e#2743#3114#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackGround.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameOver_State_HI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Framework_JHI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Barrel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/Stage5">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/Stage6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/Stage3">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/Stage2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stage/Stage1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -943,48 +939,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main_State_JHI.py">
+    <entry file="file://$PROJECT_DIR$/MapInit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2844">
-          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+        <state relative-caret-position="756">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main_State_HI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rank_State.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameOver_State_HI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Title_State_JHI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="254">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

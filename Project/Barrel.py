@@ -43,6 +43,15 @@ class Barrel():
                 self.x, self.y = 270, 650
             elif self.num == 4:
                 self.x, self.y = 470, 650
+        elif self.stage == 6:
+            if self.num == 1:
+                self.x, self.y = 180, 650
+            elif self.num == 2:
+                self.x, self.y = 280, 650
+            elif self.num == 3:
+                self.x, self.y = 380, 650
+            elif self.num == 4:
+                self.x, self.y = 530, 650
         self.dx = 5
         self.dy = 5
         self.total_frames = 0
@@ -119,6 +128,26 @@ class Barrel():
                     self.y -=self.dy
                 elif self.num == 4:
                     self.y -= self.dy
+        elif self.stage == 6:
+            if self.y == 50:
+                if(self.left):
+                    self.x += self.dx
+                    if(self.x > 740):
+                        self.left = False
+                elif(self.left == False):
+                    self.x -= self.dx
+                    if(self.x < 160):
+                        self.left = True
+            else:
+                if self.num == 1:
+                    self.y -=self.dy
+                elif self.num == 2:
+                    self.y -= self.dy
+                elif self.num == 3:
+                    self.y -=self.dy
+                elif self.num == 4:
+                    self.y -= self.dy
+
 
     def draw(self):
         if self.collideon == False:
