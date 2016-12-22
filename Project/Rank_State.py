@@ -37,7 +37,18 @@ def handle_events(frame_time):
             Framework_JHI.change_state(Title_State_JHI)
 def update(frame_time):
     pass
+def draw(frame_time):
+    global image
+    clear_canvas()
+    image.draw(400, 300)
+    draw_ranking()
+    update_canvas()
 
+def bubble_sort(data):
+    for i in range(0, len(data)):
+         for j in range(0,len(data)):
+            if(data[i]['Score']>data[j]['Score']):
+                data[i], data[j] = data[j], data[i]
 def draw_ranking():
     f = open('Ranking_file', 'r')
     score_data = json.load(f)
@@ -51,17 +62,3 @@ def draw_ranking():
         font.draw(100,400-40*i,'%d. Score:%10d'
                   % (i+1,score['Score']), (250,250,250))
         i+=1
-
-def bubble_sort(data):
-    for i in range(0, len(data)):
-         for j in range(0,len(data)):
-            if(data[i]['Score']>data[j]['Score']):
-                data[i], data[j] = data[j], data[i]
-
-def draw(frame_time):
-    global image
-    clear_canvas()
-    image.draw(400, 300)
-    draw_ranking()
-    update_canvas()
-
