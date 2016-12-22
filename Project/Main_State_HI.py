@@ -9,6 +9,8 @@ import HPbar
 import UnbeatTrue
 import Rank_State
 import GameOver_State_HI
+import Lava
+
 name = "Main"
 map = None
 stage = None
@@ -24,8 +26,10 @@ score = None
 HP = None
 StartSound = None
 BGM = None
+lava = None
 def enter():
-    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar,font,score,HP,StartSound,BGM
+    global map,stage,character,barrels,dtime,time,stageimage,hpbar,unbeatbar,font,score,HP,StartSound,BGM,lava
+    lava = Lava.Lava(0)
     dtime = 100
     time = 0
     stage = 1
@@ -47,7 +51,8 @@ def enter():
     BGM.repeat_play()
 
 def exit():
-    global map,character,barrels,stageimage,hpbar,unbeatbar,StartSound,BGM
+    global map,character,barrels,stageimage,hpbar,unbeatbar,StartSound,BGM,lava
+    del(lava)
     del(map)
     del(character)
     del(barrels)
@@ -64,21 +69,23 @@ def resume():
     pass
 
 def draw(frame_time):
-    global map,character,barrels,stageimage,hpbar,unbeatbar,font,score
+    global map,character,barrels,stageimage,hpbar,unbeatbar,font,score,lava
     clear_canvas()
     map.draw()
     for barrel in barrels:
         barrel.draw()
-    character.draw()
     hpbar.draw()
     unbeatbar.draw()
+    character.draw()
+    lava.draw()
     font.draw(Macro.width/2-50, Macro.height-10, 'Score:%d' % (score), (0, 0, 0))
     stageimage.draw()
     update_canvas()
 
 def update(frame_time):
-    global map,character,stage,time,barrels,dtime,stageimage,hpbar,unbeatbar,score,HP
+    global map,character,stage,time,barrels,dtime,stageimage,hpbar,unbeatbar,score,HP,lava
     ####################################
+    lava.update()
     if character.y < 0 :
         HP -= 1
     hpbar = HPbar.HPbar(HP)
@@ -146,7 +153,8 @@ def update(frame_time):
                 score += 100
                 barrel.sound.set_volume(40)
                 barrel.sound.play()
-
+    if lava.sety + lava.y +150 > character.y:
+        HP -=1
     for potal in map.potals:
         if potal.collide(character):
             if stage == 1:
@@ -159,6 +167,7 @@ def update(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
@@ -169,6 +178,7 @@ def update(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
@@ -179,6 +189,7 @@ def update(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 5:
                 stage = 6
                 map = MapInit.Map(stage)
@@ -189,6 +200,7 @@ def update(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 6:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)
@@ -204,7 +216,7 @@ def update(frame_time):
 
 
 def handle_events(frame_time):
-    global map,stage,character,barrels,dtime,time,stageimage
+    global map,stage,character,barrels,lava,dtime,time,stageimage
     events = get_events()
     for event in events:
         character.handle_event(event)
@@ -223,6 +235,7 @@ def handle_events(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 3:
                 stage = 4
                 map = MapInit.Map(stage)
@@ -233,6 +246,7 @@ def handle_events(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 4:
                 stage = 5
                 map = MapInit.Map(stage)
@@ -243,6 +257,7 @@ def handle_events(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 5:
                 stage = 6
                 map = MapInit.Map(stage)
@@ -253,6 +268,7 @@ def handle_events(frame_time):
                 time = 0
                 StartSound.set_volume(30)
                 StartSound.play()
+                lava = Lava.Lava(0)
             elif stage == 6:
                 f = open('Ranking_file', 'r')
                 score_data = json.load(f)
