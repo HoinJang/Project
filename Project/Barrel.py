@@ -27,7 +27,7 @@ class Barrel():
             self.y = 495
         elif self.stage == 4:
             if self.num == 1:
-                self.x, self.y = 170,650
+                self.x, self.y = 180,650
             elif self.num == 2:
                 self.x, self.y = 330,650
             elif self.num == 3:
@@ -36,11 +36,11 @@ class Barrel():
                 self.x, self.y = 630,650
         elif self.stage == 5:
             if self.num == 1:
-                self.x, self.y = 60, 650
+                self.x, self.y = 70, 650
             elif self.num == 2:
-                self.x, self.y = 170, 650
+                self.x, self.y = 180, 650
             elif self.num == 3:
-                self.x, self.y = 270, 650
+                self.x, self.y = 280, 650
             elif self.num == 4:
                 self.x, self.y = 470, 650
         elif self.stage == 6:

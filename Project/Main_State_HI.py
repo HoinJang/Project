@@ -74,9 +74,9 @@ def draw(frame_time):
     map.draw()
     for barrel in barrels:
         barrel.draw()
+    character.draw()
     hpbar.draw()
     unbeatbar.draw()
-    character.draw()
     lava.draw()
     font.draw(Macro.width/2-50, Macro.height-10, 'Score:%d' % (score), (0, 0, 0))
     stageimage.draw()
@@ -153,7 +153,7 @@ def update(frame_time):
                 score += 100
                 barrel.sound.set_volume(40)
                 barrel.sound.play()
-    if lava.sety + lava.y +150 > character.y:
+    if lava.sety + lava.y +160 > character.y:
         HP -=1
     for potal in map.potals:
         if potal.collide(character):
@@ -194,7 +194,7 @@ def update(frame_time):
                 stage = 6
                 map = MapInit.Map(stage)
                 stageimage = StageImage.StageImage(5)
-                character = Character.Character(440,300)
+                character = Character.Character(Macro.player_start_x3,Macro.player_start_y3)
                 barrels = [Barrel() for i in range(0)]
                 dtime = 25
                 time = 0
@@ -262,7 +262,7 @@ def handle_events(frame_time):
                 stage = 6
                 map = MapInit.Map(stage)
                 stageimage = StageImage.StageImage(5)
-                character = Character.Character(440,300)
+                character = Character.Character(Macro.player_start_x3,Macro.player_start_y3)
                 barrels = [Barrel() for i in range(0)]
                 dtime = 25
                 time = 0

@@ -27,8 +27,9 @@ NotDraw = -300
 player_start_x1 = 25
 player_start_y1 = 95
 player_start_x2 = 25
-player_start_y2 = 600
-
+player_start_y2 = 620
+player_start_x3 = 440
+player_start_y3 = 300
 
 player_size = 50
 Item_size = 50
